@@ -6,12 +6,12 @@
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
 #+TITLE: Web Design
-#+AUTHOR: Xiaohui Ellis
+#+AUTHOR: Stephen Brown
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+      <a href="https://github.com/stsb11/7-CS-micro">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -89,7 +89,7 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* Hyperlinks
+* Twinkle Twinkle
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
@@ -97,50 +97,83 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- Create a second web page just like what you have done with the web page =index.html=. If you forgot how to do it, just go back and follow the instructions. Save your second page as =mySecondPage.html= inside the same folder as your =index.html=.
-
-- This is my second page. Yours may be different:
-[[./img/page-2.png]]
-- You should now have two html files in your folder:
-[[./img/folder-2.png]]
-- We add a hyperlink on the body of our first web page to link it to our second web page.
-- Type a line like the following in your *first* web page:
-
-#+begin_src html
-<a href="mySecondWebPage.html">Click here to see many photos when Jack growing up!</a>
+- One of the most useful thing about computers is the ability to store information and change it. 
+- Computers can store different *types* of data, such as: 
+  - Integers (whole numbers, like =1= ,=2=, =0=, =-500=)
+  - Booleans (=True= and =False=)
+  - Characters (e.g. =a=, =@=, =-=, or =?=)
+  - Strings (several characters together, e.g. this sentence)
+  - Real numbers (E.g. 2.5, -6.2, 3.141572)
+- We'll use some variables today to make patterns on the Micro:bit display.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The display on the Micro:bit uses co-ordinates just like in maths to describe where each of its LEDs are.
+- The top-left LED has an =x= position of 0, and a =y= position of 0, or we write (0, 0) as a shorthand.
+- The LED to the right of that is located at =(1, 0)=. The one immediately underneath that is =(1, 1)= and so on. The bottom-right most LED is therefore located at =(4, 4)=.
+[[./img/microbit.png]]
+- We can turn on a single LED with this command:
+#+begin_src python
+display.set_pixel(x, y, howBright)
 #+end_src
+- We replace =x=, =y= and =howBright= with numbers to indicate which LED we want to illuminate, then a number from 0 (off) to 9 (full power) for how bright the LED should be.
 
-- In between the =<a>= and =</a>= tags is where you put the hyperlinked text. A hyperlinked text when clicked will take you to another page. In this we want to go to our second web page.
 
-- The =href= is called an attribute. An attribute is used to give more information about a tag. In this case it tells the browser where our second page is. href stands for hypertext reference.
-- The new line for the link must be placed somewhere inside the body pairs.
+- Let's make an app to make an attractive light show. We'll start with something quite simple, then slowly make it more elaborate. 
+- To start with, let's just aim to make the left-most LED come on, then the next one, then the next and so on until the top row is all turned on.
+- Once the full row is on, we'll clear the display and start over. There are a few ways we could do this. One way would be like this:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Open a new Micro:Python window, delete the example code, and paste this in:
+#+begin_src python
+from microbit import *
+howBright=9
 
-#+begin_src html
-<head>
-<title>My Dog Jack</title>
-</head>
-<body>
-<p>My dog Jack is a minature schnauzer. He is 8 months old.</p>
-<a href="mySecondWebPage.html">Click here to see many photos when Jack growing up!</a>
-</body>
-</html>
+while True:
+    display.set_pixel(0, 0, howBright)
+    sleep(500)
+    display.set_pixel(1, 0, howBright)
+    sleep(500)
+    display.set_pixel(2, 0, howBright)
+    sleep(500)
+    display.set_pixel(3, 0, howBright)
+    sleep(500)
+    display.set_pixel(4, 0, howBright)
+    sleep(500)
+    display.clear()
 #+end_src
-
-- After you added the hyperlink in your =index.html= file, save it. Go to your folder,open the =index.html= file by either double clicking on it or right click then choose Open with a browser of your choice. You should see something similar to the image shown below. 
-[[./img/page-3.png]]
-- Test if the hyperlink works by clicking on it. You know it is working if your second page opens up in a browser window.
-- After you added the hyperlink in your =index.html= file and have tested it successfully, try to add a hyperlink in your second web page that links to your first page independently first.
-
+- This is 15 lines of code in total, and would do the job we want.
+- There are some issues here, though. What if we wanted to make it move faster by reducing the =sleep()= time? We'd need to change the 500 in five different places.
+- What if we wanted to make it light up from right to left? We'd need to reverse all the numbers.
+- What about lighting all the other rows of pixels at the same time so the whole display shows the effect? We'd need to copy and paste the chunk of code another four times, then we'd have to modify each one individually. The resulting program would be huge! 
+- There's got to be a better way, and this is where variables can help.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Delete the code from before, and replace it with these 10 lines.
+#+begin_src python
+from microbit import *
+x=0
+howBright=9
+while True:
+    display.set_pixel(x, 0, howBright)
+    x+=1
+    sleep(250)
+    
+    if x==5:
+        display.clear()
+        x=0
+#+end_src
+- Let's consider our code...
+- The =x=0= line is telling 
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Develop a pair of web pages, called =page1.html= and =page2.html=
-   - They should link to one another.
-   - Include a link to two of your favourite websites.
-   - Upload both HTML files to [[https://www.bournetolearn.com][BourneToLearn.com]] for marking.
-
-
-- *Silver:* Create a working hyperlink.
-- *Gold:* Make both pages link to one another
-- *Platinum:* Complete all the above tasks, *AND* change the font on the page to 'Arial'. 
+- *Silver:* Write a program that makes a pattern that scrolls down vertically rather than horizontally.
+- *Gold:* Make your pattern fill the first two columns rather than just one.
+- *Platinum:* Make your pattern fill all the columns, *AND* have the brightness increase each time a new LED is turned on. When the brightness reaches 9, it should start again at 1. 

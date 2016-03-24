@@ -62,7 +62,7 @@ for the JavaScript code in this tag.
 <h1 class="title">Web Design</h1>
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+      <a href="https://github.com/stsb11/7-CS-micro">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -76,110 +76,154 @@ for the JavaScript code in this tag.
     </ul>
   </div>
 <div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1">Hyperlinks</h2>
+<h2 id="sec-1">Twinkle Twinkle</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 <div id="outline-container-sec-1-1" class="outline-3 learn">
 <h3 id="sec-1-1">Learn It</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li>Create a second web page just like what you have done with the web page <code>index.html</code>. If you forgot how to do it, just go back and follow the instructions. Save your second page as <code>mySecondPage.html</code> inside the same folder as your <code>index.html</code>.
+<li>One of the most useful thing about computers is the ability to store information and change it. 
 </li>
-
-<li>This is my second page. Yours may be different:
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="./img/page-2.png" alt="page-2.png" />
-</p>
-</div>
+<li>Computers can store different <b>types</b> of data, such as: 
 <ul class="org-ul">
-<li>You should now have two html files in your folder:
+<li>Integers (whole numbers, like <code>1</code> ,=2=, <code>0</code>, <code>-500</code>)
+</li>
+<li>Booleans (<code>True</code> and <code>False</code>)
+</li>
+<li>Characters (e.g. <code>a</code>, <code>@</code>, <code>-</code>, or <code>?</code>)
+</li>
+<li>Strings (several characters together, e.g. this sentence)
+</li>
+<li>Real numbers (E.g. 2.5, -6.2, 3.141572)
 </li>
 </ul>
-
-<div class="figure">
-<p><img src="./img/folder-2.png" alt="folder-2.png" />
-</p>
-</div>
-<ul class="org-ul">
-<li>We add a hyperlink on the body of our first web page to link it to our second web page.
 </li>
-<li>Type a line like the following in your <b>first</b> web page:
-</li>
-</ul>
-
-<div class="org-src-container">
-
-<pre class="src src-html">&lt;a href="mySecondWebPage.html"&gt;Click here to see many photos when Jack growing up!&lt;/a&gt;
-</pre>
-</div>
-
-<ul class="org-ul">
-<li>In between the <code>&lt;a&gt;</code> and <code>&lt;/a&gt;</code> tags is where you put the hyperlinked text. A hyperlinked text when clicked will take you to another page. In this we want to go to our second web page.
-</li>
-
-<li>The <code>href</code> is called an attribute. An attribute is used to give more information about a tag. In this case it tells the browser where our second page is. href stands for hypertext reference.
-</li>
-<li>The new line for the link must be placed somewhere inside the body pairs.
-</li>
-</ul>
-
-<div class="org-src-container">
-
-<pre class="src src-html">&lt;head&gt;
-&lt;title&gt;My Dog Jack&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;p&gt;My dog Jack is a minature schnauzer. He is 8 months old.&lt;/p&gt;
-&lt;a href="mySecondWebPage.html"&gt;Click here to see many photos when Jack growing up!&lt;/a&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
-</div>
-
-<ul class="org-ul">
-<li>After you added the hyperlink in your <code>index.html</code> file, save it. Go to your folder,open the <code>index.html</code> file by either double clicking on it or right click then choose Open with a browser of your choice. You should see something similar to the image shown below. 
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="./img/page-3.png" alt="page-3.png" />
-</p>
-</div>
-<ul class="org-ul">
-<li>Test if the hyperlink works by clicking on it. You know it is working if your second page opens up in a browser window.
-</li>
-<li>After you added the hyperlink in your <code>index.html</code> file and have tested it successfully, try to add a hyperlink in your second web page that links to your first page independently first.
+<li>We'll use some variables today to make patterns on the Micro:bit display.
 </li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-sec-1-2" class="outline-3 badge">
-<h3 id="sec-1-2">Badge It</h3>
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li>Develop a pair of web pages, called <code>page1.html</code> and <code>page2.html</code>
-<ul class="org-ul">
-<li>They should link to one another.
+<li>The display on the Micro:bit uses co-ordinates just like in maths to describe where each of its LEDs are.
 </li>
-<li>Include a link to two of your favourite websites.
+<li>The top-left LED has an <code>x</code> position of 0, and a <code>y</code> position of 0, or we write (0, 0) as a shorthand.
 </li>
-<li>Upload both HTML files to <a href="https://www.bournetolearn.com">BourneToLearn.com</a> for marking.
+<li>The LED to the right of that is located at <code>(1, 0)</code>. The one immediately underneath that is <code>(1, 1)</code> and so on. The bottom-right most LED is therefore located at <code>(4, 4)</code>.
 </li>
 </ul>
+
+<div class="figure">
+<p><img src="./img/microbit.png" alt="microbit.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We can turn on a single LED with this command:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">display.set_pixel(x, y, howBright)
+</pre>
+</div>
+<ul class="org-ul">
+<li>We replace <code>x</code>, <code>y</code> and <code>howBright</code> with numbers to indicate which LED we want to illuminate, then a number from 0 (off) to 9 (full power) for how bright the LED should be.
 </li>
 </ul>
 
 
 <ul class="org-ul">
-<li><b>Silver:</b> Create a working hyperlink.
+<li>Let's make an app to make an attractive light show. We'll start with something quite simple, then slowly make it more elaborate. 
 </li>
-<li><b>Gold:</b> Make both pages link to one another
+<li>To start with, let's just aim to make the left-most LED come on, then the next one, then the next and so on until the top row is all turned on.
 </li>
-<li><b>Platinum:</b> Complete all the above tasks, <b>AND</b> change the font on the page to 'Arial'. 
+<li>Once the full row is on, we'll clear the display and start over. There are a few ways we could do this. One way would be like this:
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 code">
+<h3 id="sec-1-3">Code It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Open a new Micro:Python window, delete the example code, and paste this in:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
+<span style="color: #268bd2;">howBright</span>=9
+
+<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
+    display.set_pixel(0, 0, howBright)
+    sleep(500)
+    display.set_pixel(1, 0, howBright)
+    sleep(500)
+    display.set_pixel(2, 0, howBright)
+    sleep(500)
+    display.set_pixel(3, 0, howBright)
+    sleep(500)
+    display.set_pixel(4, 0, howBright)
+    sleep(500)
+    display.clear()
+</pre>
+</div>
+<ul class="org-ul">
+<li>This is 15 lines of code in total, and would do the job we want.
+</li>
+<li>There are some issues here, though. What if we wanted to make it move faster by reducing the <code>sleep()</code> time? We'd need to change the 500 in five different places.
+</li>
+<li>What if we wanted to make it light up from right to left? We'd need to reverse all the numbers.
+</li>
+<li>What about lighting all the other rows of pixels at the same time so the whole display shows the effect? We'd need to copy and paste the chunk of code another four times, then we'd have to modify each one individually. The resulting program would be huge! 
+</li>
+<li>There's got to be a better way, and this is where variables can help.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 code">
+<h3 id="sec-1-4">Code It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Delete the code from before, and replace it with these 10 lines.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
+<span style="color: #268bd2;">x</span>=0
+<span style="color: #268bd2;">howBright</span>=9
+<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
+    display.set_pixel(x, 0, howBright)
+    <span style="color: #268bd2;">x</span>+=1
+    sleep(250)
+
+    <span style="color: #859900; font-weight: bold;">if</span> x==5:
+        display.clear()
+        <span style="color: #268bd2;">x</span>=0
+</pre>
+</div>
+<ul class="org-ul">
+<li>Let's consider our code&#x2026;
+</li>
+<li>The <code>x=0</code> line is telling 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 badge">
+<h3 id="sec-1-5">Badge It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li><b>Silver:</b> Write a program that makes a pattern that scrolls down vertically rather than horizontally.
+</li>
+<li><b>Gold:</b> Make your pattern fill the first two columns rather than just one.
+</li>
+<li><b>Platinum:</b> Make your pattern fill all the columns, <b>AND</b> have the brightness increase each time a new LED is turned on. When the brightness reaches 9, it should start again at 1. 
 </li>
 </ul>
 </div>
@@ -187,7 +231,7 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="validation"></p>
 </div>
 </body>
 </html>
