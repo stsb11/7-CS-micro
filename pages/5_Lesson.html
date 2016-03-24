@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Web Design</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/navbar.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Web Design</h1>
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+    </ul>
+  </div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1">Images</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Let's check our design to see where to add images of my dog Jack on my homepage - the <code>index.html</code>. There are two images, one is on the topbox, the other inside the rightbox. 
+</li>
+<li>Let's add the image to the rightbox first since it is easier - it is just before the paragraph. It will be more involved to add an image to the topbox as it is side by side with the heading.
+</li>
+<li>To add an image, we need to:
+<ul class="org-ul">
+<li>Create a folder images in the same folder you have saved your <code>index.html</code> file to hold all the images will be used in your web pages together.
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/folder-3.png" alt="folder-3.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Use the tag <code>img</code>. This tag does not need a closing <code>&lt;/img&gt;</code>.
+</li>
+<li>The tag img needs an attribute tag <code>src</code> to specify the image location and the image name.
+</li>
+<li>The image name must be complete, which means the file extension such as <code>.jpg</code>, <code>.gif</code>, or <code>.png</code> etc must be included.
+</li>
+<li>Here is a line of code for adding an image. src is an attribute that gives the location and name of the image file, which is in a folder called images.
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;img src="images/jack-right.jpg"&gt;
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>If we don't specify the width and height we like the image to be displayed in a browser, the browser will display the image using its original size which may be too large. To do so, we need to add two more attributes to the img tag, the width and the height attributes like so: (you may need to experiment with the width and height to get the right image size for your own page.)
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;img src="images/jack-right.jpg" width=600 height=180&gt;
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>You should now have the body section of your <code>index.html</code> file similiar to this:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/html-body-3.png" alt="html-body-3.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The homepage now looks like this in a browser:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/page-6.png" alt="page-6.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 code">
+<h3 id="sec-1-2">Code It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Let's check our design again to see what is inside the <code>leftbox</code>. In the leftbox, there are just a list of hyperlinks to other pages or web sites. One of the important features of webpages is to have links to allow users to navigate your site or to go to other sites.
+</li>
+<li>The list of hyperlinks looks like bulletin points. HTML has tags to create a list that are similar to bulletin points. There are two basic kind of list: ordered list and unordered list:
+</li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Ordered list:</b> defined using tag <code>&lt;ol&gt;</code> and <code>&lt;/ol&gt;</code>. The list has a number, a Roman numeral or a letter to indicate each item's order. Each item in the list is defined using the tag <code>&lt;li&gt;</code> and <code>&lt;/li&gt;</code>. The following example shows how to define an ordered list:
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">An ordered list code</th>
+<th scope="col" class="left">What you see in a browser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&lt;ol&gt;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&lt;li&gt;Milk&lt;/li&gt;</td>
+<td class="left">1. Milk</td>
+</tr>
+
+<tr>
+<td class="left">&lt;li&gt;Butter&lt;/li&gt;</td>
+<td class="left">2. Butter</td>
+</tr>
+
+<tr>
+<td class="left">&lt;/ol&gt;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li><b>Unordered list:</b> defined using tag <code>&lt;ul&gt;</code> and <code>&lt;/ul&gt;</code>. The list has a number, a Roman numeral or a letter to indicate each item's order. Each item in the list is defined using the tag <code>&lt;li&gt;</code> and <code>&lt;/li&gt;</code>. The following example shows how to define an unordered list:
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">An unordered list code</th>
+<th scope="col" class="left">What you see in a browser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&lt;ul&gt;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&lt;li&gt;Milk&lt;/li&gt;</td>
+<td class="left">- Milk</td>
+</tr>
+
+<tr>
+<td class="left">&lt;li&gt;Butter&lt;/li&gt;</td>
+<td class="left">- Butter</td>
+</tr>
+
+<tr>
+<td class="left">&lt;/ul&gt;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 code">
+<h3 id="sec-1-3">Code It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>A description list is a list of terms or names, with a description of each term or name. This can also be used to define our list of hyperlinks.
+</li>
+<li>The <code>&lt;dl&gt;</code> tag defines a description list.
+</li>
+<li>The <code>&lt;dl&gt;</code> tag is used together with <code>&lt;dt&gt;</code> (defines a term) and <code>&lt;dd&gt;</code> (describes a term).
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;dl&gt;                      
+ &lt;dt&gt;Milk&lt;/dt&gt;             
+   &lt;dd&gt;A white liquid&lt;/dd&gt;   
+ &lt;dt&gt;Butter&lt;/dt&gt;           
+   &lt;dd&gt;A dairy product&lt;/dd&gt;  
+   &lt;dd&gt;Used for cooking&lt;/dd&gt; 
+&lt;/dl&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2">Hyperlinks</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>In the <code>leftbox</code> of our design, there should be a list of hyperlinks. We can add some descriptions under each hyperlink to give more information as what each link is about.
+</li>
+<li>The <code>&lt;dt&gt;</code> (defines a term) tag will be used to define a hyperlink and the <code>&lt;dd&gt;</code> (describes a term) will be the description for that hyperlink
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;dl&gt; 
+ &lt;dt&gt;&lt;a href="mySecondPage.html"&gt;Photo Gallery&lt;/a&gt; &lt;/dt&gt; 
+ &lt;dd&gt; - A collection of photos of Jack from 4 weeks to present&gt;&lt;dd&gt; 
+&lt;/dl&gt;
+</pre>
+</div>
+<ul class="org-ul">
+<li><b>Task:</b> Can you independently add a link to the Wikipedia page for mini Schnauzers under the photo gallery link? 
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/page-8.png" alt="page-8.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 badge">
+<h3 id="sec-2-2">Badge It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Complete the tasks for this lesson. Upload your <code>index.html</code> file.
+</li>
+<li><b>Silver:</b> Add the image to the <code>rightbox</code>.
+</li>
+<li><b>Gold:</b> Add a link to the <code>leftbox</code>.
+</li>
+<li><b>Platinum:</b> Complete all the tasks for this lesson.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

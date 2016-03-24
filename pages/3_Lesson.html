@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Web Design</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/navbar.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Web Design</h1>
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+    </ul>
+  </div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1">Styling</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Now you have two web pages. They are not much to look at although you can navigate from one page to another. To build a good quality web site, you need to think about a few things carefully:
+<ul class="org-ul">
+<li>What do you want to be on your web site?
+</li>
+<li>What do you want to be on your homepage?
+</li>
+<li>What is your target audience?
+</li>
+<li>Are layouts and choice of colours and fonts appropriate for the contents and target audience?
+</li>
+</ul>
+</li>
+<li>It is a common practice for web designers to sketch some layouts of web pages, then web developers use those designs to write html code.
+</li>
+<li>The following image showing an example of such sketch of layout.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/design-sketch.jpg" alt="design-sketch.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>This is the original Twitter concept sketch!
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/twitter-concept.jpg" alt="twitter-concept.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 design">
+<h3 id="sec-1-2">Design It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Sketch your own web page layout design. To do this:
+<ul class="org-ul">
+<li>You can use pencil and paper,
+</li>
+<li>You can use Word's shapes or textboxes,
+</li>
+<li>You can also use the Paint program,
+</li>
+</ul>
+</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Be sure to annotate the elements of your layout
+</li>
+<li>The following is a sketch of layout for the homepage (<code>index.html</code>) this tutorial will use to make our homepage look nicer. It was created using Paint.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/sketch.png" alt="sketch.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Web pages are made of different areas. 
+<ul class="org-ul">
+<li>Some headers to say what the page is about. 
+</li>
+<li>Some links to take users to different pages. 
+</li>
+<li>The main area will be the place for the main content for that page. 
+</li>
+</ul>
+</li>
+
+<li>You can say web pages are made of different shapes and sizes of boxes, and you are absolutely right. In this section, we are going to learn the <b>box model</b> of web design.
+</li>
+<li>All HTML elements can be considered as boxes.The box model allows us to place a border around elements and space elements in relation to other elements. The image below illustrates the box model:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/box-model.gif" alt="box-model.gif" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><b>Margin:</b> Clears an area around the border. The margin does not have a background color, it is completely transparent.
+</li>
+<li><b>Border:</b> A border that goes around the padding and content.
+</li>
+<li><b>Padding:</b> Clears an area around the content.
+</li>
+<li><b>Content:</b> The content of the box, where text and images appear
+</li>
+<li><b>Size:</b> The size of the box can be defined by width and height in unit of number of pixels.
+</li>
+
+<li>To give an idea of scale, the following shows a box with the size of 100x100 pixels as displayed in your browser.
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./img/100pixels.jpg" alt="100pixels.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 code">
+<h3 id="sec-1-4">Code It</h3>
+<div class="outline-text-3" id="text-1-4">
+
+<div class="figure">
+<p><img src="./img/sketch.png" alt="sketch.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Let's create the layout shown above using the box model. First, we'll define the top blue box.
+</li>
+<li>Open your <code>index.html</code> file with Notepad.
+</li>
+<li>Let's give the blue box a name, <code>topbox</code>. This will let the web browsers know which part of the webpage we are talking about when we write code for it.
+</li>
+<li>Add the following lines just below the <code>&lt;body&gt;</code> tag.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;div id="topbox"&gt;
+&lt;/div&gt;
+</pre>
+</div>
+
+<p>
+Your <code>index.html</code> should now look like this:
+<img src="./img/topbox-style-1.png" alt="topbox-style-1.png" />
+</p>
+
+<ul class="org-ul">
+<li>The <code>&lt;div&gt;</code> tag is for defining a division or section on a web page. In this case, we defined a section or division called "<code>topbox</code>". Right now there is no information about the size, colour or content about the division yet.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 code">
+<h3 id="sec-1-5">Code It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>We'll now create the layout using the box model, and style the top box.
+</li>
+<li>We have our top box defined in the <code>index.html</code> file. But if you open the <code>index.html</code> file with a browser, it will not show up. The reason is we have not defined the size and colour of the box yet.
+</li>
+</ul>
+
+<p>
+To do this, we need another new tag <code>&lt;style&gt;</code> plus some attributes to tell browsers the size and colour of our topbox. Since <code>&lt;style&gt;</code> is not the actual content on the page's body, we need to add this style information within the <code>&lt;head&gt;</code> tags like so:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;My Dog Jack&lt;/title&gt;
+&lt;style&gt; 
+#topbox { 
+width: 800px; 
+height: 100px;
+background-color: blue;
+}
+&lt;/style&gt; 
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="topbox"&gt;
+&lt;/div&gt;
+&lt;p&gt;My dog Jack is a minature schnauzer. He is 8 months old.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3 test">
+<h3 id="sec-1-6">Test It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>Create the layout using the box model - and then save the work and refresh your browser to see the changes.
+</li>
+<li>Save your <code>index.html</code> file and then open it with a browser. You should see something like this:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/topbox-page-1.png" alt="topbox-page-1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>If you don't see it, double check your <code>index.html</code> file to make sure there are no typos and unclosed tags: (use the following as your guide.)
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/topbox-style-2.png" alt="topbox-style-2.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3 code">
+<h3 id="sec-1-7">Code It</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Let's now create the layout using the box model and add text to the box.
+</li>
+<li>We now have a blank box with solid colour. Let's add some text to the box as the heading to our home page. We are going to use a new tag, heading tag to do this. 
+</li>
+<li>Before we start, can you work out where we should place this heading text in the following lines?
+</li>
+
+<li>Only partial code from <code>index.html</code> is shown.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;body&gt;
+&lt;div id="topbox"&gt;
+&lt;/div&gt;
+&lt;p&gt;My dog Jack is a minature schnauzer. He is 8 months old.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Since we want the heading to be inside the box, we need to put it in between the <code>&lt;div&gt;</code> tags. There are six different heading tags you can use, from <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> to <code>&lt;h6&gt;</code>, each resulting in a different font size with <code>&lt;h1&gt;</code> the biggest and <code>&lt;h6&gt;</code> the smallest.
+</li>
+
+<li>You might have guessed correctly, we need to add the heading like so (I used <code>h2</code> here):
+</li>
+</ul>
+
+<p>
+Only partial code from <code>index.html</code> is shown.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;body&gt;
+&lt;div id="topbox"&gt;
+&lt;h2&gt;My Dog Jack&lt;/h2&gt;
+&lt;/div&gt;
+&lt;p&gt;My dog Jack is a minature schnauzer. He is 8 months old.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>After you added the heading to your <code>index.html</code> file, save your <code>index.html</code> file and open it with a browser or refresh your browser if you have it open already to see the effects.
+</li>
+<li>You should see something similar to this:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/topbox-page-2.png" alt="topbox-page-2.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 code">
+<h3 id="sec-1-8">Code It</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>We'll now create the layout using the box model, adding style to the heading.
+</li>
+<li>Our <code>topbox</code> now contains the heading. The heading text has the default colour black. We need to change the text location and colour to make the <code>topbox</code> of our home page look nicer.
+</li>
+<li>To style the heading text, we need to add some style attributes to the heading tag. In this case the <code>h2</code> tag.
+</li>
+<li>To style the <code>h2</code> heading, the following lines of code need to be added:
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-html">h2 { 
+color: yellow; 
+text-align: center; 
+}
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Note that two attributes are used to define the style of <code>&lt;h2&gt;</code>.
+</li>
+<li>&#x2026;also, the attribute color is spelled the American way.
+</li>
+<li><code>color: yellow;</code> is the syntax for defining the heading text color as yellow.
+</li>
+<li><code>text-align: center;</code> is the syntax for defining where the heading text should be placed inside the topbox.
+</li>
+<li>You can also use <code>text-align: right;</code> if you want the heading text to be placed on the right-hand side part of the <code>topbox</code>.
+</li>
+<li>Add the above lines of code inside your <code>index.html</code> file. Try to work out where to add those lines independently.
+</li>
+<li>Save your <code>index.html</code> file and open it with a browser or refresh your browser if you have it open already to see the effects.
+</li>
+<li>If you don't get the result right, here are some tips for debugging:
+<ul class="org-ul">
+<li>Check there are no spelling mistakes for attribute names and attribute values.
+</li>
+<li>Check American spelling is used for the word color
+</li>
+<li>Check there are no missing : , ; , or {, or } symbols.
+</li>
+</ul>
+</li>
+<li>Your page should now look like this&#x2026;
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/topbox-page-3.png" alt="topbox-page-3.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-9" class="outline-3 badge">
+<h3 id="sec-1-9">Badge It</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>Complete the tasks for this lesson.
+</li>
+<li><b>Silver:</b> Create the <code>topbox</code>.
+</li>
+<li><b>Gold:</b> Modify the behaviour of your <code>topbox</code> to centre the text or change the appearance of it.
+</li>
+<li><b>Platinum:</b> Complete all the tasks for this lesson.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

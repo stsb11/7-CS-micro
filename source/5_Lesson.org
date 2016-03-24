@@ -1,0 +1,193 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Web Design
+#+AUTHOR: Xiaohui Ellis
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Images
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Let's check our design to see where to add images of my dog Jack on my homepage - the =index.html=. There are two images, one is on the topbox, the other inside the rightbox. 
+- Let's add the image to the rightbox first since it is easier - it is just before the paragraph. It will be more involved to add an image to the topbox as it is side by side with the heading.
+- To add an image, we need to:
+   - Create a folder images in the same folder you have saved your =index.html= file to hold all the images will be used in your web pages together.
+[[./img/folder-3.png]]
+   - Use the tag =img=. This tag does not need a closing =</img>=.
+   - The tag img needs an attribute tag =src= to specify the image location and the image name.
+   - The image name must be complete, which means the file extension such as =.jpg=, =.gif=, or =.png= etc must be included.
+- Here is a line of code for adding an image. src is an attribute that gives the location and name of the image file, which is in a folder called images.
+
+#+begin_src html
+<img src="images/jack-right.jpg"> 
+#+end_src
+
+- If we don't specify the width and height we like the image to be displayed in a browser, the browser will display the image using its original size which may be too large. To do so, we need to add two more attributes to the img tag, the width and the height attributes like so: (you may need to experiment with the width and height to get the right image size for your own page.)
+
+#+begin_src html
+<img src="images/jack-right.jpg" width=600 height=180> 
+#+end_src
+
+- You should now have the body section of your =index.html= file similiar to this:
+[[./img/html-body-3.png]]
+- The homepage now looks like this in a browser:
+[[./img/page-6.png]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's check our design again to see what is inside the =leftbox=. In the leftbox, there are just a list of hyperlinks to other pages or web sites. One of the important features of webpages is to have links to allow users to navigate your site or to go to other sites.
+- The list of hyperlinks looks like bulletin points. HTML has tags to create a list that are similar to bulletin points. There are two basic kind of list: ordered list and unordered list:
+
+
+- *Ordered list:* defined using tag =<ol>= and =</ol>=. The list has a number, a Roman numeral or a letter to indicate each item's order. Each item in the list is defined using the tag =<li>= and =</li>=. The following example shows how to define an ordered list:
+
+| An ordered list code | What you see in a browser |
+|----------------------+---------------------------|
+| <ol>                 |                           |
+|   <li>Milk</li>      | 1. Milk                   |
+|   <li>Butter</li>    | 2. Butter                 |
+| </ol>                |                           |
+
+- *Unordered list:* defined using tag =<ul>= and =</ul>=. The list has a number, a Roman numeral or a letter to indicate each item's order. Each item in the list is defined using the tag =<li>= and =</li>=. The following example shows how to define an unordered list:
+
+| An unordered list code | What you see in a browser |
+|----------------------+---------------------------|
+| <ul>                 |                           |
+|   <li>Milk</li>      | - Milk                    |
+|   <li>Butter</li>    | - Butter                  |
+| </ul>                |                           |
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- A description list is a list of terms or names, with a description of each term or name. This can also be used to define our list of hyperlinks.
+- The =<dl>= tag defines a description list.
+- The =<dl>= tag is used together with =<dt>= (defines a term) and =<dd>= (describes a term).
+              
+#+begin_src html
+<dl>                      
+ <dt>Milk</dt>             
+   <dd>A white liquid</dd>   
+ <dt>Butter</dt>           
+   <dd>A dairy product</dd>  
+   <dd>Used for cooking</dd> 
+</dl> 
+#+end_src
+
+* Hyperlinks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- In the =leftbox= of our design, there should be a list of hyperlinks. We can add some descriptions under each hyperlink to give more information as what each link is about.
+- The =<dt>= (defines a term) tag will be used to define a hyperlink and the =<dd>= (describes a term) will be the description for that hyperlink
+#+begin_src html
+<dl> 
+ <dt><a href="mySecondPage.html">Photo Gallery</a> </dt> 
+ <dd> - A collection of photos of Jack from 4 weeks to present><dd> 
+</dl>
+#+end_src
+-  *Task:* Can you independently add a link to the Wikipedia page for mini Schnauzers under the photo gallery link? 
+[[./img/page-8.png]]
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Complete the tasks for this lesson. Upload your =index.html= file.
+- *Silver:* Add the image to the =rightbox=.
+- *Gold:* Add a link to the =leftbox=.
+- *Platinum:* Complete all the tasks for this lesson.

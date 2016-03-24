@@ -1,0 +1,51 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="pages/css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil  toc:nil
+#+TITLE: BBC Micro:bit
+#+AUTHOR: Stephen Brown
+
+
+#+BEGIN_HTML
+<div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+        <a href="https://github.com/stsb11/7-CS-micro">Fork me on GitHub</a>
+    </div>
+</div>
+<center>
+<img src=./source/img/micro.jpg width=25%>
+</center>
+#+END_HTML
+* [[file:pages/1_Lesson.html][Week 1 - Getting started]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:      
+* [[file:pages/2_Lesson.html][Week 2 - Hyperlinks]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:      
+* [[file:pages/3_Lesson.html][Week 3 - Styling]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/4_Lesson.html][Week 4 - Containers]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/5_Lesson.html][Week 5 - Images]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/6_Lesson.html][Week 6 - Padding and Margins]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/7_Lesson.html][Week 7 - Publishing online]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* COMMENT  [[file:pages/assessment.html][Assessment]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+

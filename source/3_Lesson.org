@@ -1,0 +1,277 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Web Design
+#+AUTHOR: Xiaohui Ellis
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Styling
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Now you have two web pages. They are not much to look at although you can navigate from one page to another. To build a good quality web site, you need to think about a few things carefully:
+   - What do you want to be on your web site?
+   - What do you want to be on your homepage?
+   - What is your target audience?
+   - Are layouts and choice of colours and fonts appropriate for the contents and target audience?
+- It is a common practice for web designers to sketch some layouts of web pages, then web developers use those designs to write html code.
+- The following image showing an example of such sketch of layout.
+[[./img/design-sketch.jpg]]
+- This is the original Twitter concept sketch!
+[[./img/twitter-concept.jpg]]
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+- Sketch your own web page layout design. To do this:
+   - You can use pencil and paper,
+   - You can use Word's shapes or textboxes,
+   - You can also use the Paint program,
+
+
+- Be sure to annotate the elements of your layout
+- The following is a sketch of layout for the homepage (=index.html=) this tutorial will use to make our homepage look nicer. It was created using Paint.
+[[./img/sketch.png]]
+
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Web pages are made of different areas. 
+   - Some headers to say what the page is about. 
+   - Some links to take users to different pages. 
+   - The main area will be the place for the main content for that page. 
+
+- You can say web pages are made of different shapes and sizes of boxes, and you are absolutely right. In this section, we are going to learn the *box model* of web design.
+- All HTML elements can be considered as boxes.The box model allows us to place a border around elements and space elements in relation to other elements. The image below illustrates the box model:
+[[./img/box-model.gif]]
+
+- *Margin:* Clears an area around the border. The margin does not have a background color, it is completely transparent.
+- *Border:* A border that goes around the padding and content.
+- *Padding:* Clears an area around the content.
+- *Content:* The content of the box, where text and images appear
+- *Size:* The size of the box can be defined by width and height in unit of number of pixels.
+
+- To give an idea of scale, the following shows a box with the size of 100x100 pixels as displayed in your browser.
+
+[[./img/100pixels.jpg]]
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+[[./img/sketch.png]]
+- Let's create the layout shown above using the box model. First, we'll define the top blue box.
+- Open your =index.html= file with Notepad.
+- Let's give the blue box a name, =topbox=. This will let the web browsers know which part of the webpage we are talking about when we write code for it.
+- Add the following lines just below the =<body>= tag.
+#+begin_src html
+<div id="topbox">
+</div>
+#+end_src
+
+Your =index.html= should now look like this:
+[[./img/topbox-style-1.png]]
+
+- The =<div>= tag is for defining a division or section on a web page. In this case, we defined a section or division called "=topbox=". Right now there is no information about the size, colour or content about the division yet.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We'll now create the layout using the box model, and style the top box.
+- We have our top box defined in the =index.html= file. But if you open the =index.html= file with a browser, it will not show up. The reason is we have not defined the size and colour of the box yet.
+
+To do this, we need another new tag =<style>= plus some attributes to tell browsers the size and colour of our topbox. Since =<style>= is not the actual content on the page's body, we need to add this style information within the =<head>= tags like so:
+
+#+begin_src html
+<html>
+<head>
+<title>My Dog Jack</title>
+<style> 
+#topbox { 
+width: 800px; 
+height: 100px;
+background-color: blue;
+}
+</style> 
+</head>
+<body>
+<div id="topbox">
+</div>
+<p>My dog Jack is a minature schnauzer. He is 8 months old.</p>
+</body>
+</html>
+#+end_src
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+- Create the layout using the box model - and then save the work and refresh your browser to see the changes.
+- Save your =index.html= file and then open it with a browser. You should see something like this:
+[[./img/topbox-page-1.png]]
+- If you don't see it, double check your =index.html= file to make sure there are no typos and unclosed tags: (use the following as your guide.)
+[[./img/topbox-style-2.png]]
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's now create the layout using the box model and add text to the box.
+- We now have a blank box with solid colour. Let's add some text to the box as the heading to our home page. We are going to use a new tag, heading tag to do this. 
+- Before we start, can you work out where we should place this heading text in the following lines?
+
+- Only partial code from =index.html= is shown.
+#+begin_src html
+<body>
+<div id="topbox">
+</div>
+<p>My dog Jack is a minature schnauzer. He is 8 months old.</p>
+</body>
+</html>
+#+end_src
+
+- Since we want the heading to be inside the box, we need to put it in between the =<div>= tags. There are six different heading tags you can use, from =<h1>=, =<h2>= to =<h6>=, each resulting in a different font size with =<h1>= the biggest and =<h6>= the smallest.
+
+- You might have guessed correctly, we need to add the heading like so (I used =h2= here):
+
+Only partial code from =index.html= is shown.
+#+begin_src html
+<body>
+<div id="topbox">
+<h2>My Dog Jack</h2>
+</div>
+<p>My dog Jack is a minature schnauzer. He is 8 months old.</p>
+</body>
+</html>
+#+end_src
+
+- After you added the heading to your =index.html= file, save your =index.html= file and open it with a browser or refresh your browser if you have it open already to see the effects.
+- You should see something similar to this:
+[[./img/topbox-page-2.png]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We'll now create the layout using the box model, adding style to the heading.
+- Our =topbox= now contains the heading. The heading text has the default colour black. We need to change the text location and colour to make the =topbox= of our home page look nicer.
+- To style the heading text, we need to add some style attributes to the heading tag. In this case the =h2= tag.
+- To style the =h2= heading, the following lines of code need to be added:
+
+#+begin_src html
+h2 { 
+color: yellow; 
+text-align: center; 
+}
+#+end_src
+
+- Note that two attributes are used to define the style of =<h2>=.
+- ...also, the attribute color is spelled the American way.
+- =color: yellow;= is the syntax for defining the heading text color as yellow.
+- =text-align: center;= is the syntax for defining where the heading text should be placed inside the topbox.
+- You can also use =text-align: right;= if you want the heading text to be placed on the right-hand side part of the =topbox=.
+- Add the above lines of code inside your =index.html= file. Try to work out where to add those lines independently.
+- Save your =index.html= file and open it with a browser or refresh your browser if you have it open already to see the effects.
+- If you don't get the result right, here are some tips for debugging:
+   - Check there are no spelling mistakes for attribute names and attribute values.
+   - Check American spelling is used for the word color
+   - Check there are no missing : , ; , or {, or } symbols.
+- Your page should now look like this...
+[[./img/topbox-page-3.png]]
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Complete the tasks for this lesson.
+- *Silver:* Create the =topbox=.
+- *Gold:* Modify the behaviour of your =topbox= to centre the text or change the appearance of it.
+- *Platinum:* Complete all the tasks for this lesson.

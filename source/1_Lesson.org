@@ -1,0 +1,171 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: BBC Micro:bit
+#+AUTHOR: Stephen Brown
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/stsb11/7-CS-micro">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Bits and Pieces
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Back in the early 1980s, the BBC launched a computer literacy project, working with a company called Acorn to produce a computer called the BBC Micro. 
+[[./img/microkeyboard.jpg]]
+- /(Image courtesy of Wikipedia)/
+- The machines were highly popular with schools, and were many people's first experience with computers. They could be programmed using a language called BASIC, and had different games and programs that could be run on them. You can read more about it [[https://en.wikipedia.org/wiki/BBC_Micro][here]].
+- Fast-forward 30 years or so, and the BBC have kindly produced the BBC Micro:bit - a computer you can carry, being given to every year 7 in the country to keep (you can take yours home once you've completed this topic). 
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's write our very first program for the Micro:bit right now.
+- Open the Micro:bit site, by opening [[https://www.microbit.co.uk/create-code][this link]] in a new tab.
+- https://www.microbit.co.uk/create-code
+- Scroll down slightly, and click the link under the "Python" heading that says, "New project".
+- Your screen should look something like this:
+[[./img/python_ide.png]]
+- Change the line 7 (they're numbered along the left-hand edge) to gree you by name rather than writing "Hello World".
+- We can now put this program to our Micro:bit and see it work in the real World. Follow these instructions carefully:
+  1. Gently plug the small end of the USB cable you've been given by your teacher into the socket on the Micro:bit. *NOTE:* The cable must go in the right way up; it does not need to be forced, otherwise it'll break.
+  2. Plug the larger end of the USB cable into your PC. Again, this will only fit one way round. 
+  3. The Micro:bit will boot up, and a short demo sequence will start.
+  4. Click the *Download* button in the top-left hand corner of the browser window. After a few moments, you'll see a dialogue box appear. Click *Save File* and it will disappear. 
+  5. Open *My Computer* or a file explorer window, and navigate to your Downloads folder...
+[[./img/download2.png]]
+  6. You'll see an enthusiastically named file with *.hex* written at the end of it in this folder (E.g. /awesome program.hex/). This is your program, ready to go onto the Micro:bit. Right-click on this file and choose 'cut'.
+  7. Look down the different drive-letters in your explorer window, and find the one labelled *MICROBIT*. Click on this to open it.
+[[./img/download3.png]]
+  8. You'll see 3 files in here, with names like AUTO_RST.CFG and DETAILS.TXT which will let you know you're in the right place. Right-click in this folder, and choose *Paste* to place your program onto the Microbit. the yellow LED on the back of the unit will flicker while your program transfers, and after a few seconds, your program will run. You can repeat this process whenever you want to put a new program on the Micro:bit.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Let's think about what the program you've got running is actually doing for a second. Here is is again:
+#+begin_src python
+# Add your Python code here. E.g.
+from microbit import *
+
+while True:
+    display.scroll('Hello, World!')
+    display.show(Image.HEART)
+    sleep(2000)
+#+end_src
+- The first line starts with a *#* symbol. This tells MicroPython that this line is a /comment/ written for humans to read. Any line you put a # at the start of will be ignored by the Micro:bit. 
+- The =from microbit...= line is fetching some special code to allow our programs to control the buttons and LEDs on the Micro:bit. You'll always need this line at the start of the programs you write. 
+- The =while True= line starts something called a loop, which you'll have encountered before in [[https://scratch.mit.edu][scratch]]. We won't focus too much on this in our first lesson, but these are important in programming and we'll re-visit them later on. For now, its enough to know that any lines of code that come after it AND are indented (see how the next instructions are a few spaces away from the left margin?) will be repeated over and over forever.
+- The =display.scroll()= line asks the Micro:bit to display whatever text is written in quotes inside the brackets on the LED display.
+- =display.show()= makes images appear on the display. A heart is built into Micro:Python, as are rather a lot of [[http://microbit-micropython.readthedocs.org/en/latest/tutorials/images.html][others]] too.
+- =sleep()= tells the Micro:bit to wait a number of milliseconds (there are 1000 in 1 second) before carrying out the next instruction.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- To save your code (so you can come back to it another day), you need to download it to your computer.
+  - Click "My Scripts" in the top-left corner of the coding window.
+  - Click the "Save" button on the right-hand side of the new page.
+  - Click "Save File" on the download window that appears.
+  - Locate the *.jsz* file that has been saved to your Downloads folder, and cut/paste it into your H: drive.
+
+
+- To open a previously saved file in future, you can drag and drop .jsz files from your *My Computer* window onto the *My Scripts* page on the Micro:bit site.
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Silver:* Write a program to do the following, and push it to your Micro:bit
+  - Display your first name, 
+  - Wait 1 second, 
+  - Display an image,
+  - Wait 1 second,
+  - Display "CompSci"
+  - Wait 1 second
+- Take a screenshot of your code, and upload it to BourneToLearn for marking
+- *Gold:* Read the documentation for [[http://microbit-micropython.readthedocs.org/en/latest/tutorials/images.html#diy-images][DIY images]], and draw a custom shape on the Micro:Bit. Upload a screenshot of your code for the teacher.
