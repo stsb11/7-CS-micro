@@ -123,7 +123,12 @@
   6. You'll see an enthusiastically named file with *.hex* written at the end of it in this folder (E.g. /awesome program.hex/). This is your program, ready to go onto the Micro:bit. Right-click on this file and choose 'cut'.
   7. Look down the different drive-letters in your explorer window, and find the one labelled *MICROBIT*. Click on this to open it.
 [[./img/download3.png]]
-  8. You'll see 3 files in here, with names like AUTO_RST.CFG and DETAILS.TXT which will let you know you're in the right place. Right-click in this folder, and choose *Paste* to place your program onto the Microbit. the yellow LED on the back of the unit will flicker while your program transfers, and after a few seconds, your program will run. You can repeat this process whenever you want to put a new program on the Micro:bit.
+  8. You'll see 3 files in here, with names like AUTORST.CFG and DETAILS.TXT which will let you know you're in the right place. Right-click in this folder, and choose *Paste* to place your program onto the Microbit. the yellow LED on the back of the unit will flicker while your program transfers, and after a few seconds, your program will run. You can repeat this process whenever you want to put a new program on the Micro:bit.
+- This video tutorial walks you through it...
+#+BEGIN_HTML
+<iframe width="420" height="315" src="https://www.youtube.com/embed/4YUFQEeQ95U" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
 ** Learn It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
@@ -153,9 +158,12 @@ while True:
   - Click the "Save" button on the right-hand side of the new page.
   - Click "Save File" on the download window that appears.
   - Locate the *.jsz* file that has been saved to your Downloads folder, and cut/paste it into your H: drive.
-
-
 - To open a previously saved file in future, you can drag and drop .jsz files from your *My Computer* window onto the *My Scripts* page on the Micro:bit site.
+
+- This video walks you through the process.
+#+BEGIN_HTML
+<iframe width="420" height="315" src="https://www.youtube.com/embed/GTidFC-RyPE" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
@@ -169,3 +177,4 @@ while True:
   - Wait 1 second
 - Take a screenshot of your code, and upload it to BourneToLearn for marking
 - *Gold:* Read the documentation for [[http://microbit-micropython.readthedocs.org/en/latest/tutorials/images.html#diy-images][DIY images]], and draw a custom shape on the Micro:Bit. Upload a screenshot of your code for the teacher.
+- Save your work in your H: drive using the technique above.
