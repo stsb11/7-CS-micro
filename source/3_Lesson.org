@@ -5,13 +5,13 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Web Design
-#+AUTHOR: Xiaohui Ellis
+#+TITLE: Conditional Buttons
+#+AUTHOR: Stephen Brown
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+      <a href="https://github.com/stsb11/7-CS-micro">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -89,7 +89,7 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* Styling
+* A Mu Direction
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
@@ -97,181 +97,110 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- Now you have two web pages. They are not much to look at although you can navigate from one page to another. To build a good quality web site, you need to think about a few things carefully:
-   - What do you want to be on your web site?
-   - What do you want to be on your homepage?
-   - What is your target audience?
-   - Are layouts and choice of colours and fonts appropriate for the contents and target audience?
-- It is a common practice for web designers to sketch some layouts of web pages, then web developers use those designs to write html code.
-- The following image showing an example of such sketch of layout.
-[[./img/design-sketch.jpg]]
-- This is the original Twitter concept sketch!
-[[./img/twitter-concept.jpg]]
-
-** Design It
+- We've used the [[https://www.microbit.co.uk/create-code][browser-based IDE]] for our Micro:bit, but it's a little nicer working in a proper application when we need to find problems with our code. We're going to use a program called /Mu/ from this point forward. You can use this method, or the web browser version from last lesson with your Micro:bit at home.
+- *NOTE:* You can download /Mu/ for use at home [[https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/windows/mu-2016-03-21_08_49_17.exe][here]] (Windows) or [[https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/osx/mu-2016-03-14_21_09_19.zip][here]] (MacOS). 
+- Start by loading /Mu/ from the Open drive, in this folder:
+- =G:\Computing 2015-2016\Y7\BBC MicroBit= 
+** Learn It
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: design
+:HTML_CONTAINER_CLASS: code
 :END:
-- Sketch your own web page layout design. To do this:
-   - You can use pencil and paper,
-   - You can use Word's shapes or textboxes,
-   - You can also use the Paint program,
+- Previously, we looked at how using variables can allow our Micro:bit programs to be more flexible. We'll look today at how using =If= commands and some variables can make our programs more powerful. 
+- =If= allows you to check if a particular statement is true, then carries out some instructions and then moves to the next instructions outside the =If= block. 
+- We can also add =Elif= and =Else= commands with a seperate set of instructions to tell the computer what to do in different situations. The pseudocode below gives an example of an =If= block:
+#+begin_src
+hungerLevel = input("From 0-10, how hungry are you? ")
 
+IF hungerLevel == 10:
+    PRINT "Eat a proper dinner"
+ELIF hungerLevel > 5:
+    PRINT "Eat a sandwich"
+ELIF hungerLevel > 2 :
+    PRINT "Eat an apple"
+ELSE:
+    PRINT "Wait until later"
+END IF
 
-- Be sure to annotate the elements of your layout
-- The following is a sketch of layout for the homepage (=index.html=) this tutorial will use to make our homepage look nicer. It was created using Paint.
-[[./img/sketch.png]]
-
+PRINT "Thank you for using the food guide."
+#+end_src 
+- If the user enters 10, the first =If= statement is true, so the user will be told to eat a proper dinner. The program then leaves the =If= block (Shown by writing =END IF= here) and the user is thanked for using the app. 
+- If they'd entered 9, a sandwich is recommended, then they're thanked.
+- Entering 5 would advise the user to eat an apple, then they're thanked. /Why is that?/
+- A user who who chooses 1, -5 or 0 would be advised to wait until later, and is then thanked. This is because none of the other statements in the =If= block were true. 
 ** Learn It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- Web pages are made of different areas. 
-   - Some headers to say what the page is about. 
-   - Some links to take users to different pages. 
-   - The main area will be the place for the main content for that page. 
+- Let's write a program to make the Micro:bit work as a simple torch. We can write some simple pseudocode to express what we want to achieve:
+#+begin_src
+WHILE True
+    IF button A is pushed:
+        Turn all LEDs on
+    ELSE IF button B is pushed:
+        Turn all LEDs off
+    END IF
+END WHILE
+#+end_src
+- By using IF statements in this way, the LEDs instructions are only carried out when the appropriate button is pushed.
+- Let's code it! Clear the exmple code, paste this into the /Mu/ window
+#+begin_src python
+from microbit import *
 
-- You can say web pages are made of different shapes and sizes of boxes, and you are absolutely right. In this section, we are going to learn the *box model* of web design.
-- All HTML elements can be considered as boxes.The box model allows us to place a border around elements and space elements in relation to other elements. The image below illustrates the box model:
-[[./img/box-model.gif]]
+while True:
+    if button_a.is_pressed():
+        display.show(Image.CHESSBOARD)
+    elif button_b.is_pressed():
+        display.clear()
+#+end_src
+- Click the =Flash= button at the top of the window to push your program to the Micro:bit.
+- Can you remix the code above to write a happy/sad program? If the user pushes button A, the =HAPPY= image should be loaded onto the screen. If they push B, =SAD= should be shown. If they push nothing, the image should change to =ASLEEP=. 
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Combining =If= with variables allows us to start to make more useful programs.
+- We could make a simple counting app to help a toddler learn their first few numbers. Starting at zero, the buttons could be used to show the digits from 0-9 o the display.
+- Our pseudocode could be something like:
+#+begin_src
+currentNumber=0
 
-- *Margin:* Clears an area around the border. The margin does not have a background color, it is completely transparent.
-- *Border:* A border that goes around the padding and content.
-- *Padding:* Clears an area around the content.
-- *Content:* The content of the box, where text and images appear
-- *Size:* The size of the box can be defined by width and height in unit of number of pixels.
+WHILE True:
+    IF buttonA pushed:
+        DECREASE currentNumber BY 1
+    ELSE IF buttonB pushed:
+        INCREASE currentNumber BY 1
+    ENDIF
 
-- To give an idea of scale, the following shows a box with the size of 100x100 pixels as displayed in your browser.
-
-[[./img/100pixels.jpg]]
-
+    PRINT currentNumber
+WHILE END
+#+end_src
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-[[./img/sketch.png]]
-- Let's create the layout shown above using the box model. First, we'll define the top blue box.
-- Open your =index.html= file with Notepad.
-- Let's give the blue box a name, =topbox=. This will let the web browsers know which part of the webpage we are talking about when we write code for it.
-- Add the following lines just below the =<body>= tag.
-#+begin_src html
-<div id="topbox">
-</div>
+- Copy this code to your Micro:bit...
+#+begin_src python
+from microbit import *
+currentNumber = 0
+
+while True:
+    if button_a.is_pressed():
+        currentNumber -= 1
+    elif button_b.is_pressed():
+        currentNumber += 1
+
+    display.scroll(currentNumber)
 #+end_src
-
-Your =index.html= should now look like this:
-[[./img/topbox-style-1.png]]
-
-- The =<div>= tag is for defining a division or section on a web page. In this case, we defined a section or division called "=topbox=". Right now there is no information about the size, colour or content about the division yet.
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- We'll now create the layout using the box model, and style the top box.
-- We have our top box defined in the =index.html= file. But if you open the =index.html= file with a browser, it will not show up. The reason is we have not defined the size and colour of the box yet.
-
-To do this, we need another new tag =<style>= plus some attributes to tell browsers the size and colour of our topbox. Since =<style>= is not the actual content on the page's body, we need to add this style information within the =<head>= tags like so:
-
-#+begin_src html
-<html>
-<head>
-<title>My Dog Jack</title>
-<style> 
-#topbox { 
-width: 800px; 
-height: 100px;
-background-color: blue;
-}
-</style> 
-</head>
-<body>
-<div id="topbox">
-</div>
-<p>My dog Jack is a minature schnauzer. He is 8 months old.</p>
-</body>
-</html>
-#+end_src
-
-** Test It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: test
-:END:
-- Create the layout using the box model - and then save the work and refresh your browser to see the changes.
-- Save your =index.html= file and then open it with a browser. You should see something like this:
-[[./img/topbox-page-1.png]]
-- If you don't see it, double check your =index.html= file to make sure there are no typos and unclosed tags: (use the following as your guide.)
-[[./img/topbox-style-2.png]]
-
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- Let's now create the layout using the box model and add text to the box.
-- We now have a blank box with solid colour. Let's add some text to the box as the heading to our home page. We are going to use a new tag, heading tag to do this. 
-- Before we start, can you work out where we should place this heading text in the following lines?
-
-- Only partial code from =index.html= is shown.
-#+begin_src html
-<body>
-<div id="topbox">
-</div>
-<p>My dog Jack is a minature schnauzer. He is 8 months old.</p>
-</body>
-</html>
-#+end_src
-
-- Since we want the heading to be inside the box, we need to put it in between the =<div>= tags. There are six different heading tags you can use, from =<h1>=, =<h2>= to =<h6>=, each resulting in a different font size with =<h1>= the biggest and =<h6>= the smallest.
-
-- You might have guessed correctly, we need to add the heading like so (I used =h2= here):
-
-Only partial code from =index.html= is shown.
-#+begin_src html
-<body>
-<div id="topbox">
-<h2>My Dog Jack</h2>
-</div>
-<p>My dog Jack is a minature schnauzer. He is 8 months old.</p>
-</body>
-</html>
-#+end_src
-
-- After you added the heading to your =index.html= file, save your =index.html= file and open it with a browser or refresh your browser if you have it open already to see the effects.
-- You should see something similar to this:
-[[./img/topbox-page-2.png]]
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- We'll now create the layout using the box model, adding style to the heading.
-- Our =topbox= now contains the heading. The heading text has the default colour black. We need to change the text location and colour to make the =topbox= of our home page look nicer.
-- To style the heading text, we need to add some style attributes to the heading tag. In this case the =h2= tag.
-- To style the =h2= heading, the following lines of code need to be added:
-
-#+begin_src html
-h2 { 
-color: yellow; 
-text-align: center; 
-}
-#+end_src
-
-- Note that two attributes are used to define the style of =<h2>=.
-- ...also, the attribute color is spelled the American way.
-- =color: yellow;= is the syntax for defining the heading text color as yellow.
-- =text-align: center;= is the syntax for defining where the heading text should be placed inside the topbox.
-- You can also use =text-align: right;= if you want the heading text to be placed on the right-hand side part of the =topbox=.
-- Add the above lines of code inside your =index.html= file. Try to work out where to add those lines independently.
-- Save your =index.html= file and open it with a browser or refresh your browser if you have it open already to see the effects.
-- If you don't get the result right, here are some tips for debugging:
-   - Check there are no spelling mistakes for attribute names and attribute values.
-   - Check American spelling is used for the word color
-   - Check there are no missing : , ; , or {, or } symbols.
-- Your page should now look like this...
-[[./img/topbox-page-3.png]]
+- This program is ok, but we could use some more =If= lines to make it better. 
+- I only want the program to show the numbers 0-9, but at the moment it'll give me negative numbers, and will count beyond 9.
+- By adding another =If= statement, we could say something like 'if the currentNumber goes above 9, set it back to 9', perhaps?
+- *Question:* Why is the =currentNumber = 0= line sat above the =While True:= line? What would happen if it was inside the WHILE loop?
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
 - Complete the tasks for this lesson.
-- *Silver:* Create the =topbox=.
-- *Gold:* Modify the behaviour of your =topbox= to centre the text or change the appearance of it.
-- *Platinum:* Complete all the tasks for this lesson.
+- *Silver:* Modify the code to start at 1, and show the 6 times table instead. Upload your code to BourneToLearn.com 
+- *Gold:* Change the code back to a counting up and down program, but modify the code so that the user can't make the numbers go above 9 or below 0. 
+- *Platinum:* Write an app to count down from 10 to 0, then show a smiley face. 
+   - *BONUS CHALLENGE:* If the user pushes one of the buttons during the countdown, it should show a sad face instead. Once a button is pushed, the numbers should stop counting.
