@@ -145,6 +145,8 @@ WHILE True
         Turn all LEDs on
     ELSE IF button B is pushed:
         Turn all LEDs off
+    ELSE:
+        DO NOTHING
     END IF
 END WHILE
 </pre>
@@ -168,7 +170,9 @@ END WHILE
 <ul class="org-ul">
 <li>Click the <code>Flash</code> button at the top of the window to push your program to the Micro:bit.
 </li>
-<li>Can you remix the code above to write a happy/sad program? If the user pushes button A, the <code>HAPPY</code> image should be loaded onto the screen. If they push B, <code>SAD</code> should be shown. If they push nothing, the image should change to <code>ASLEEP</code>. 
+<li>Did you notice that we didn't add an <code>else</code> line to match the one in our pseudocode? As we don't want to take any action if a button isn't pushed, we don't need to write any code.
+</li>
+<li><b>Challenge:</b> Can you remix the code above to write a happy/sad program? If the user pushes button A, the <code>HAPPY</code> image should be loaded onto the screen. If they push B, <code>SAD</code> should be shown. If they push nothing, the image should change to <code>ASLEEP</code>.
 </li>
 </ul>
 </div>
@@ -190,11 +194,11 @@ currentNumber=0
 WHILE True:
     IF buttonA pushed:
         DECREASE currentNumber BY 1
+        PRINT currentNumber
     ELSE IF buttonB pushed:
         INCREASE currentNumber BY 1
+        PRINT currentNumber
     ENDIF
-
-    PRINT currentNumber
 WHILE END
 </pre>
 </div>
@@ -214,20 +218,21 @@ WHILE END
 <span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
     <span style="color: #859900; font-weight: bold;">if</span> button_a.is_pressed():
         <span style="color: #268bd2;">currentNumber</span> -= 1
+        display.scroll(<span style="color: #657b83; font-weight: bold;">str</span>(currentNumber))
     <span style="color: #859900; font-weight: bold;">elif</span> button_b.is_pressed():
         <span style="color: #268bd2;">currentNumber</span> += 1
-
-    display.scroll(currentNumber)
+        display.scroll(<span style="color: #657b83; font-weight: bold;">str</span>(currentNumber))
 </pre>
 </div>
 <ul class="org-ul">
-<li>This program is ok, but we could use some more <code>If</code> lines to make it better. 
+<li><b>Question:</b> Why is the <code>currentNumber = 0</code> line sat above the <code>While True:</code> line? What would happen if it was inside the WHILE loop?
+</li>
+
+<li>With this code working, could we improve it?
 </li>
 <li>I only want the program to show the numbers 0-9, but at the moment it'll give me negative numbers, and will count beyond 9.
 </li>
-<li>By adding another <code>If</code> statement, we could say something like 'if the currentNumber goes above 9, set it back to 9', perhaps?
-</li>
-<li><b>Question:</b> Why is the <code>currentNumber = 0</code> line sat above the <code>While True:</code> line? What would happen if it was inside the WHILE loop?
+<li>Programmers can add <code>If</code> statements inside other <code>if</code> statements (we call this nesting) to produce even more powerful programs. We just need to remember to tab in the code correctly to tell the computer which commands are in our <code>If</code> block and which aren't. 
 </li>
 </ul>
 </div>
@@ -236,13 +241,20 @@ WHILE END
 <h3 id="sec-1-6">Badge It</h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
-<li>Complete the tasks for this lesson.
+<li><b>Silver:</b> Modify the code above to start at 6, and show the 6 times table forwards and backwards. Upload your code to BourneToLearn.com. 
 </li>
-<li><b>Silver:</b> Modify the code to start at 1, and show the 6 times table instead. Upload your code to BourneToLearn.com 
+<li><b>Gold:</b> Change the code back to a counting up and down (one at a time) program, but modify the code so that the user can't make the numbers go above 9 or below 0. 
 </li>
-<li><b>Gold:</b> Change the code back to a counting up and down program, but modify the code so that the user can't make the numbers go above 9 or below 0. 
+<li>You should be able to do this with two new lines of code. This might give you a step in the right direction:
 </li>
-<li><b>Platinum:</b> Write an app to count down from 10 to 0, then show a smiley face. 
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">if</span> currentNumber &gt;= 1:
+</pre>
+</div>
+<ul class="org-ul">
+<li><b>Platinum:</b> Write an app to count down from 10 to 0 (without the Micro:bit needing to be touched), then show a smiley face. 
 <ul class="org-ul">
 <li><b>BONUS CHALLENGE:</b> If the user pushes one of the buttons during the countdown, it should show a sad face instead. Once a button is pushed, the numbers should stop counting.
 </li>

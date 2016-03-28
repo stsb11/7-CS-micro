@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Web Design</title>
+<title>Touchy Subject</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -59,10 +59,10 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Web Design</h1>
+<h1 class="title">Touchy Subject</h1>
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+      <a href="https://github.com/stsb11/7-CS-micro">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -76,196 +76,145 @@ for the JavaScript code in this tag.
     </ul>
   </div>
 <div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1">Contain your Excitement</h2>
+<h2 id="sec-1">Touch Interface</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 <div id="outline-container-sec-1-1" class="outline-3 learn">
 <h3 id="sec-1-1">Learn It</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li>Let's check our design sketch to see what we should do next. Click the green button again to hide the sketch and read on.
+<li>The Micro:bit also has three general purpose input/output (Called GPIO) connectors along the bottom of the unit. They're labelled 0, 1 and 2. There's also a connector that outputs a steady 3 volts (imagintively labelled 3V) and a connection to the negative end of the power supply (labelled GND). 
 </li>
-<li>Since we have two boxes split the space below the <code>topbox</code>, it makes sense to make a big box to hold both those two boxes. Also, it will make it easier for us to adjust the relative positions of those two boxes if we put them inside one big container. 
-</li>
-<li>In fact, we will call this big box <code>container</code>. 
-</li>
-<li>This container will be big enough to hold the two boxes, but it will have the same width as the <code>topbox</code> based on our design.
+<li>We can use these as touch switches too. 
 </li>
 </ul>
-
-<div class="figure">
-<p><img src="./img/sketch2.png" alt="sketch2.png" />
-</p>
 </div>
 </div>
-</div>
-<div id="outline-container-sec-1-2" class="outline-3 code">
-<h3 id="sec-1-2">Code It</h3>
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Try It</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li>You should now know how and where to add the lines of code to create a box. Add this to your <code>index.html</code> page in the right place.
+<li>Upload the following code to your Micro:bit:
 </li>
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-html">&lt;div id="container"&gt; 
-&lt;/div&gt;
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
+
+<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
+    <span style="color: #859900; font-weight: bold;">if</span> pin0.is_touched():
+        display.show(Image.HAPPY)
+    <span style="color: #859900; font-weight: bold;">elif</span> pin1.is_touched():
+        display.show(Image.SAD)
+    <span style="color: #859900; font-weight: bold;">elif</span> pin2.is_touched():
+        display.show(Image.ASLEEP)
 </pre>
 </div>
 
 <ul class="org-ul">
-<li>You should now also know how and where to add style attributes to a box.
-</li>
-<li>If you can't remember, look over the last lesson's notes.
-</li>
-</ul>
-
-<div class="org-src-container">
-
-<pre class="src src-html">#container { 
-width: 800px; 
-height: 800px; 
-}
-</pre>
-</div>
-
-<ul class="org-ul">
-<li>Let's examine what we have in our <code>index.html</code> file. Try to indent your lines of code to help you identify pairs of starting and closing tags and the structure of your box layout.
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="./img/container-1.png" alt="container-1.png" />
-</p>
-</div>
-<ul class="org-ul">
-<li>Save your <code>index.html</code> file and open it with a browser or refresh your browser if you have it open already to see the effects.
+<li>To test the program, hold the <code>GND</code> pin with one hand, then touch the <code>0</code>, <code>1</code> and <code>2</code> pins with a fingertip on the other hand. Cool, eh?
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-3" class="outline-3 code">
-<h3 id="sec-1-3">Code It</h3>
-<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2">Accelerometer</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
-<li>Let's check our design sketch again to see where the left box should go.
+<li>There are other sensors on the Micro:bit too. The accelerometer detects how level the Micro:bit is. It can measure in the x, y and z axis. 
+</li>
+<li>The amount of angle is measured in milli-g’s. A flat, level Micro:bit would report 0, with +25 or -25 being noticably angled.
 </li>
 </ul>
-
-<div class="figure">
-<p><img src="./img/sketch.png" alt="sketch.png" />
-</p>
 </div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 code">
+<h3 id="sec-2-2">Code It</h3>
+<div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
-<li>We have created a container to hold the two side-by-side boxes. The container has a height of 800px and width of 800px. The two boxes inside it have the same height as the container but with different width. We will give the left box a width of 160px and the right box a wdith of 640px to start with. 
-</li>
-<li>160px + 640px = 800px which means those two boxes take up all the width of the container.
-</li>
-<li>Since the two boxes are nested inside the container, we need to put the left box definition nested inside the container box.
+<li>Lets write some code
 </li>
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-html">&lt;div id="container"&gt; 
-    &lt;div id="leftbox"&gt; 
-    &lt;/div&gt; 
-&lt;/div&gt;
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
+
+<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
+    <span style="color: #268bd2;">x_acc</span> = accelerometer.get_x()
+    display.clear()
+
+    <span style="color: #859900; font-weight: bold;">if</span> x_acc &gt; 25:
+        <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">set_pixel parameters are (xPos, yPos, LEDbrightness)</span>
+        display.set_pixel(4, 2, 9)
+    <span style="color: #859900; font-weight: bold;">elif</span> x_acc &lt; -25:
+        display.set_pixel(0, 2, 9)
+    <span style="color: #859900; font-weight: bold;">else</span>:
+        display.set_pixel(2, 2, 9)
 </pre>
 </div>
 <ul class="org-ul">
-<li>Now let's add style attributes to the left box. You know how to define a box's height, width and background colour. To put the box in the left side of the container, we need a new attribute float with value left.
+<li>This program reads the x-axis angle of the Micro:bit, then lights an LED as appropriate. Approaching our code like this means that the y-axis is tricky to handle at the same time. 
+</li>
+<li>With variables, we could also handle the y axis too, though. This way, we could tilt both left-right and up-down. Let's write some pseudocode:
 </li>
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-html">#leftbox { 
-width: 160px; 
-height: 800px; 
-float: left; 
-}
+<pre class="src src-html">X=0
+Y=0
+
+WHILE True:
+    x_acc = ACCELEROMETER X READING
+    y_acc = ACCELEROMETER Y READING
+
+    IF x_acc &gt; 25 THEN
+        X=4
+    ELSE IF x_acc &lt; -25:
+        X=0
+    ELSE:
+        X=2
+    END IF
+
+    IF y_acc &gt; 25 THEN
+        Y=4
+    ELSE IF y_acc &lt; -25
+        Y=0
+    ELSE
+        Y=2
+    END IF
+
+    CLEAR THE DISPLAY
+    TURN ON THE LED AT POSITION X, Y.
+END WHILE
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 badge">
+<h3 id="sec-2-3">Badge It</h3>
+<div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
-<li>Save your <code>index.html</code> file and open it with a browser or refresh your browser if you have it open already to see the effects.
+<li><b>Silver:</b> Write the program shown above in MicroPython, and test it on your Micro:bit. Upload your code to <a href="https://www.BourneToLearn.com">BournetoLearn.com</a> when done.
+</li>
+<li><b>Gold:</b> Use <code>If</code> statements to add code to use the 'in between' LEDs. 
+<ul class="org-ul">
+<li><i>Hint:</i> You might need to work from about 40 to -40 rather than 25 to -25.
 </li>
 </ul>
-</div>
-</div>
-<div id="outline-container-sec-1-4" class="outline-3 try">
-<h3 id="sec-1-4">Try It</h3>
-<div class="outline-text-3" id="text-1-4">
-<ul class="org-ul">
-<li><b>Task:</b> Create the layout using the box model by adding the right box inside the container independently.
-</li>
-<li>We should now have a topbox, a container box and a left box that is in the container's left side.
-</li>
-<li>You will need to create the right box with a height of <b>800px</b>, width of <b>640px</b>, background colour of your choice.
-</li>
-<li>The right box must stay to the right side of the container box.
-</li>
-<li>If you are stuck, scroll back up to see how the left box is defined and styled.
 </li>
 </ul>
-</div>
-</div>
-<div id="outline-container-sec-1-5" class="outline-3 code">
-<h3 id="sec-1-5">Code It</h3>
-<div class="outline-text-3" id="text-1-5">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YI2RLXgQKjw" frameborder="0" allowfullscreen></iframe>
 <ul class="org-ul">
-<li>We have now three boxes. All of them are empty except the top box which has our page heading. Let's examine the body section of our <code>index.html</code>.
+<li><b>Platinum:</b> Write a race game. The player has to tilt the Micro:bit up and down 20 times, then a smiley face is shown. Players on different Micro:bits can compete to see who's fastest.
+<ul class="org-ul">
+<li><b>Bonus challenge:</b> Make the game count down 3-2-1 before the race starts.
 </li>
 </ul>
-
-<div class="figure">
-<p><img src="./img/html-body-1.png" alt="html-body-1.png" />
-</p>
-</div>
-<ul class="org-ul">
-<li>As we learned before, the order of elements in a html file is very much the same order elements will show up in a browser. The paragraph My dog Jack is a minature schnauzer. He is 8 months old. will show up as the first line in this case
-</li>
-<li>If I want the paragraph appear in the right box, I need to move the line inside the definition of the rightbox.
-</li>
-<li>It's the same for the hyperlink. I need to move it to the inside of the left box.
-</li>
-<li>This is the body section of the <code>index.html</code> file after the moving:
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="./img/html-body-2.png" alt="html-body-2.png" />
-</p>
-</div>
-<ul class="org-ul">
-<li>Save your <code>index.html</code> file and open it with a browser or refresh your browser if you have it open already to see the effects.
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-6" class="outline-3 test">
-<h3 id="sec-1-6">Test It</h3>
-<div class="outline-text-3" id="text-1-6">
-<ul class="org-ul">
-<li>After you have done everything so far, you should see something similar to the following image when you open your <code>index.html</code> in a browser:
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="./img/page-5.png" alt="page-5.png" />
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-sec-1-7" class="outline-3 badge">
-<h3 id="sec-1-7">Badge It</h3>
-<div class="outline-text-3" id="text-1-7">
-<ul class="org-ul">
-<li>Complete the tasks for this lesson. Upload your <code>index.html</code> file.
-</li>
-<li><b>Silver:</b> Create the <code>container</code> correctly.
-</li>
-<li><b>Gold:</b> Add the left and right box.
-</li>
-<li><b>Platinum:</b> Complete all the tasks for this lesson.
 </li>
 </ul>
 </div>
@@ -273,7 +222,7 @@ float: left;
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="validation"></p>
 </div>
 </body>
 </html>

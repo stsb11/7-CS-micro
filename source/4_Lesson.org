@@ -5,13 +5,13 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Web Design
-#+AUTHOR: Xiaohui Ellis
+#+TITLE: Touchy Subject
+#+AUTHOR: Stephen Brown
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+      <a href="https://github.com/stsb11/7-CS-micro">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -89,7 +89,7 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* Contain your Excitement
+* Touch Interface
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
@@ -97,90 +97,95 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- Let's check our design sketch to see what we should do next. Click the green button again to hide the sketch and read on.
-- Since we have two boxes split the space below the =topbox=, it makes sense to make a big box to hold both those two boxes. Also, it will make it easier for us to adjust the relative positions of those two boxes if we put them inside one big container. 
-- In fact, we will call this big box =container=. 
-- This container will be big enough to hold the two boxes, but it will have the same width as the =topbox= based on our design.
-[[./img/sketch2.png]]
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- You should now know how and where to add the lines of code to create a box. Add this to your =index.html= page in the right place.
-#+begin_src html
-<div id="container"> 
-</div> 
-#+end_src
-
-- You should now also know how and where to add style attributes to a box.
-- If you can't remember, look over the last lesson's notes.
-
-#+begin_src html
-#container { 
-width: 800px; 
-height: 800px; 
-}
-#+end_src
-
-- Let's examine what we have in our =index.html= file. Try to indent your lines of code to help you identify pairs of starting and closing tags and the structure of your box layout.
-[[./img/container-1.png]]
-- Save your =index.html= file and open it with a browser or refresh your browser if you have it open already to see the effects.
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- Let's check our design sketch again to see where the left box should go.
-[[./img/sketch.png]]
-- We have created a container to hold the two side-by-side boxes. The container has a height of 800px and width of 800px. The two boxes inside it have the same height as the container but with different width. We will give the left box a width of 160px and the right box a wdith of 640px to start with. 
-- 160px + 640px = 800px which means those two boxes take up all the width of the container.
-- Since the two boxes are nested inside the container, we need to put the left box definition nested inside the container box.
-#+begin_src html
-<div id="container"> 
-    <div id="leftbox"> 
-    </div> 
-</div> 
-#+end_src
-- Now let's add style attributes to the left box. You know how to define a box's height, width and background colour. To put the box in the left side of the container, we need a new attribute float with value left.
-#+begin_src html
-#leftbox { 
-width: 160px; 
-height: 800px; 
-float: left; 
-}
-#+end_src
-- Save your =index.html= file and open it with a browser or refresh your browser if you have it open already to see the effects.
+- The Micro:bit also has three general purpose input/output (Called GPIO) connectors along the bottom of the unit. They're labelled 0, 1 and 2. There's also a connector that outputs a steady 3 volts (imagintively labelled 3V) and a connection to the negative end of the power supply (labelled GND). 
+- We can use these as touch switches too. 
 ** Try It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- *Task:* Create the layout using the box model by adding the right box inside the container independently.
-- We should now have a topbox, a container box and a left box that is in the container's left side.
-- You will need to create the right box with a height of *800px*, width of *640px*, background colour of your choice.
-- The right box must stay to the right side of the container box.
-- If you are stuck, scroll back up to see how the left box is defined and styled.
+- Upload the following code to your Micro:bit:
+#+begin_src python
+from microbit import *
+
+while True:
+    if pin0.is_touched():
+        display.show(Image.HAPPY)
+    elif pin1.is_touched():
+        display.show(Image.SAD)
+    elif pin2.is_touched():
+        display.show(Image.ASLEEP)
+#+end_src
+
+- To test the program, hold the =GND= pin with one hand, then touch the =0=, =1= and =2= pins with a fingertip on the other hand. Cool, eh?
+* Accelerometer
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There are other sensors on the Micro:bit too. The accelerometer detects how level the Micro:bit is. It can measure in the x, y and z axis. 
+- The amount of angle is measured in milli-g’s. A flat, level Micro:bit would report 0, with +25 or -25 being noticably angled.
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- We have now three boxes. All of them are empty except the top box which has our page heading. Let's examine the body section of our =index.html=.
-[[./img/html-body-1.png]]
-- As we learned before, the order of elements in a html file is very much the same order elements will show up in a browser. The paragraph My dog Jack is a minature schnauzer. He is 8 months old. will show up as the first line in this case
-- If I want the paragraph appear in the right box, I need to move the line inside the definition of the rightbox.
-- It's the same for the hyperlink. I need to move it to the inside of the left box.
-- This is the body section of the =index.html= file after the moving:
-[[./img/html-body-2.png]]
-- Save your =index.html= file and open it with a browser or refresh your browser if you have it open already to see the effects.
-** Test It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: test
-:END:
-- After you have done everything so far, you should see something similar to the following image when you open your =index.html= in a browser:
-[[./img/page-5.png]]
+- Lets write some code
+#+begin_src python
+from microbit import *
+
+while True:
+    x_acc = accelerometer.get_x()
+    display.clear()
+
+    if x_acc > 25:
+        # set_pixel parameters are (xPos, yPos, LEDbrightness)
+        display.set_pixel(4, 2, 9)
+    elif x_acc < -25:
+        display.set_pixel(0, 2, 9)
+    else:
+        display.set_pixel(2, 2, 9)
+#+end_src
+- This program reads the x-axis angle of the Micro:bit, then lights an LED as appropriate. Approaching our code like this means that the y-axis is tricky to handle at the same time. 
+- With variables, we could also handle the y axis too, though. This way, we could tilt both left-right and up-down. Let's write some pseudocode:
+#+begin_src html
+X=0
+Y=0
+
+WHILE True:
+    x_acc = ACCELEROMETER X READING
+    y_acc = ACCELEROMETER Y READING
+    
+    IF x_acc > 25 THEN
+        X=4
+    ELSE IF x_acc < -25:
+        X=0
+    ELSE:
+        X=2
+    END IF
+
+    IF y_acc > 25 THEN
+        Y=4
+    ELSE IF y_acc < -25
+        Y=0
+    ELSE
+        Y=2
+    END IF
+
+    CLEAR THE DISPLAY
+    TURN ON THE LED AT POSITION X, Y.
+END WHILE
+#+end_src
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Complete the tasks for this lesson. Upload your =index.html= file.
-- *Silver:* Create the =container= correctly.
-- *Gold:* Add the left and right box.
-- *Platinum:* Complete all the tasks for this lesson.
+- *Silver:* Write the program shown above in MicroPython, and test it on your Micro:bit. Upload your code to [[https://www.BourneToLearn.com][BournetoLearn.com]] when done.
+- *Gold:* Use =If= statements to add code to use the 'in between' LEDs. 
+  - /Hint:/ You might need to work from about 40 to -40 rather than 25 to -25.
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YI2RLXgQKjw" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+- *Platinum:* Write a race game. The player has to tilt the Micro:bit up and down 20 times, then a smiley face is shown. Players on different Micro:bits can compete to see who's fastest.
+  - *Bonus challenge:* Make the game count down 3-2-1 before the race starts.

@@ -138,6 +138,8 @@ WHILE True
         Turn all LEDs on
     ELSE IF button B is pushed:
         Turn all LEDs off
+    ELSE:
+        DO NOTHING
     END IF
 END WHILE
 #+end_src
@@ -153,7 +155,8 @@ while True:
         display.clear()
 #+end_src
 - Click the =Flash= button at the top of the window to push your program to the Micro:bit.
-- Can you remix the code above to write a happy/sad program? If the user pushes button A, the =HAPPY= image should be loaded onto the screen. If they push B, =SAD= should be shown. If they push nothing, the image should change to =ASLEEP=. 
+- Did you notice that we didn't add an =else= line to match the one in our pseudocode? As we don't want to take any action if a button isn't pushed, we don't need to write any code.
+- *Challenge:* Can you remix the code above to write a happy/sad program? If the user pushes button A, the =HAPPY= image should be loaded onto the screen. If they push B, =SAD= should be shown. If they push nothing, the image should change to =ASLEEP=.
 ** Learn It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
@@ -167,11 +170,11 @@ currentNumber=0
 WHILE True:
     IF buttonA pushed:
         DECREASE currentNumber BY 1
+        PRINT currentNumber
     ELSE IF buttonB pushed:
         INCREASE currentNumber BY 1
+        PRINT currentNumber
     ENDIF
-
-    PRINT currentNumber
 WHILE END
 #+end_src
 ** Code It
@@ -186,21 +189,25 @@ currentNumber = 0
 while True:
     if button_a.is_pressed():
         currentNumber -= 1
+        display.scroll(str(currentNumber))
     elif button_b.is_pressed():
         currentNumber += 1
-
-    display.scroll(currentNumber)
+        display.scroll(str(currentNumber))
 #+end_src
-- This program is ok, but we could use some more =If= lines to make it better. 
-- I only want the program to show the numbers 0-9, but at the moment it'll give me negative numbers, and will count beyond 9.
-- By adding another =If= statement, we could say something like 'if the currentNumber goes above 9, set it back to 9', perhaps?
 - *Question:* Why is the =currentNumber = 0= line sat above the =While True:= line? What would happen if it was inside the WHILE loop?
+
+- With this code working, could we improve it?
+- I only want the program to show the numbers 0-9, but at the moment it'll give me negative numbers, and will count beyond 9.
+- Programmers can add =If= statements inside other =if= statements (we call this nesting) to produce even more powerful programs. We just need to remember to tab in the code correctly to tell the computer which commands are in our =If= block and which aren't. 
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Complete the tasks for this lesson.
-- *Silver:* Modify the code to start at 1, and show the 6 times table instead. Upload your code to BourneToLearn.com 
-- *Gold:* Change the code back to a counting up and down program, but modify the code so that the user can't make the numbers go above 9 or below 0. 
-- *Platinum:* Write an app to count down from 10 to 0, then show a smiley face. 
+- *Silver:* Modify the code above to start at 6, and show the 6 times table forwards and backwards. Upload your code to BourneToLearn.com. 
+- *Gold:* Change the code back to a counting up and down (one at a time) program, but modify the code so that the user can't make the numbers go above 9 or below 0. 
+- You should be able to do this with two new lines of code. This might give you a step in the right direction:
+#+begin_src python
+if currentNumber >= 1:
+#+end_src
+- *Platinum:* Write an app to count down from 10 to 0 (without the Micro:bit needing to be touched), then show a smiley face. 
    - *BONUS CHALLENGE:* If the user pushes one of the buttons during the countdown, it should show a sad face instead. Once a button is pushed, the numbers should stop counting.

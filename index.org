@@ -24,11 +24,11 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:      
-* [[file:pages/3_Lesson.html][Week 3 - Styling]]
+* [[file:pages/3_Lesson.html][Week 3 - If Else]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[file:pages/4_Lesson.html][Week 4 - Containers]]
+* [[file:pages/4_Lesson.html][Week 4 - Touchy Subject]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
