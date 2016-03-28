@@ -5,13 +5,13 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Web Design
-#+AUTHOR: Xiaohui Ellis
+#+TITLE: Making a point
+#+AUTHOR: Stephen Brown
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+      <a href="https://github.com/stsb11/7-CS-micro">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -89,7 +89,7 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* Images
+* An empty gesture
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
@@ -97,75 +97,22 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- Let's check our design to see where to add images of my dog Jack on my homepage - the =index.html=. There are two images, one is on the topbox, the other inside the rightbox. 
-- Let's add the image to the rightbox first since it is easier - it is just before the paragraph. It will be more involved to add an image to the topbox as it is side by side with the heading.
-- To add an image, we need to:
-   - Create a folder images in the same folder you have saved your =index.html= file to hold all the images will be used in your web pages together.
-[[./img/folder-3.png]]
-   - Use the tag =img=. This tag does not need a closing =</img>=.
-   - The tag img needs an attribute tag =src= to specify the image location and the image name.
-   - The image name must be complete, which means the file extension such as =.jpg=, =.gif=, or =.png= etc must be included.
-- Here is a line of code for adding an image. src is an attribute that gives the location and name of the image file, which is in a folder called images.
+- We looked at the accelerometer in the previous lesson. This can also be used to pick up data about the movement of the Micro:bit, in the form of gestures.
+- We can write programs to take advantage of these; my favourites are =face up=, =face down= and =shake=. Let's try using one now.
+- /Note:/ You can read more about gestures [[http://microbit-micropython.readthedocs.org/en/latest/tutorials/gestures.html#gestures][here]].
+- Try this:
+#+begin_src python
+from microbit import *
 
-#+begin_src html
-<img src="images/jack-right.jpg"> 
+while True:
+    gesture = accelerometer.current_gesture()
+    if gesture == "shake":
+        display.show(Image.HAPPY)
+        sleep(2000)
+    else:
+        display.show(Image.ASLEEP)
 #+end_src
-
-- If we don't specify the width and height we like the image to be displayed in a browser, the browser will display the image using its original size which may be too large. To do so, we need to add two more attributes to the img tag, the width and the height attributes like so: (you may need to experiment with the width and height to get the right image size for your own page.)
-
-#+begin_src html
-<img src="images/jack-right.jpg" width=600 height=180> 
-#+end_src
-
-- You should now have the body section of your =index.html= file similiar to this:
-[[./img/html-body-3.png]]
-- The homepage now looks like this in a browser:
-[[./img/page-6.png]]
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- Let's check our design again to see what is inside the =leftbox=. In the leftbox, there are just a list of hyperlinks to other pages or web sites. One of the important features of webpages is to have links to allow users to navigate your site or to go to other sites.
-- The list of hyperlinks looks like bulletin points. HTML has tags to create a list that are similar to bulletin points. There are two basic kind of list: ordered list and unordered list:
-
-
-- *Ordered list:* defined using tag =<ol>= and =</ol>=. The list has a number, a Roman numeral or a letter to indicate each item's order. Each item in the list is defined using the tag =<li>= and =</li>=. The following example shows how to define an ordered list:
-
-| An ordered list code | What you see in a browser |
-|----------------------+---------------------------|
-| <ol>                 |                           |
-|   <li>Milk</li>      | 1. Milk                   |
-|   <li>Butter</li>    | 2. Butter                 |
-| </ol>                |                           |
-
-- *Unordered list:* defined using tag =<ul>= and =</ul>=. The list has a number, a Roman numeral or a letter to indicate each item's order. Each item in the list is defined using the tag =<li>= and =</li>=. The following example shows how to define an unordered list:
-
-| An unordered list code | What you see in a browser |
-|----------------------+---------------------------|
-| <ul>                 |                           |
-|   <li>Milk</li>      | - Milk                    |
-|   <li>Butter</li>    | - Butter                  |
-| </ul>                |                           |
-
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- A description list is a list of terms or names, with a description of each term or name. This can also be used to define our list of hyperlinks.
-- The =<dl>= tag defines a description list.
-- The =<dl>= tag is used together with =<dt>= (defines a term) and =<dd>= (describes a term).
-              
-#+begin_src html
-<dl>                      
- <dt>Milk</dt>             
-   <dd>A white liquid</dd>   
- <dt>Butter</dt>           
-   <dd>A dairy product</dd>  
-   <dd>Used for cooking</dd> 
-</dl> 
-#+end_src
-
-* Hyperlinks
+* Compass
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
@@ -173,21 +120,89 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- In the =leftbox= of our design, there should be a list of hyperlinks. We can add some descriptions under each hyperlink to give more information as what each link is about.
-- The =<dt>= (defines a term) tag will be used to define a hyperlink and the =<dd>= (describes a term) will be the description for that hyperlink
-#+begin_src html
-<dl> 
- <dt><a href="mySecondPage.html">Photo Gallery</a> </dt> 
- <dd> - A collection of photos of Jack from 4 weeks to present><dd> 
-</dl>
+- The Micro:bit also has a built-in electronic compass.
+- It reads the Earth's magnetic field, and uses this to give a bearing on which way the Micro:bit is facing, from 0 to 359 degrees. 0 degrees is North, 90 is East, 180 is South and so on.
+- The compass will need calibrating first so that it knows which way to point. 
+- Once done, you can either show the bearing number on the screen, or be a little more ambitious and use an LED on the display to point out the direction. 
+- Let's start simple. Our pseudocode for this is:
+
+#+begin_src
+CALIBRATE COMPASS
+
+WHILE True
+    myHeading = READ_COMPASS_HEADING
+    PRINT myHeading
+END WHILE
 #+end_src
--  *Task:* Can you independently add a link to the Wikipedia page for mini Schnauzers under the photo gallery link? 
-[[./img/page-8.png]]
+
+- /Note:/ You can get more detail on the capabilities of the compass by looking through the documentation for MicroPython [[http://microbit-micropython.readthedocs.org/en/latest/compass.html][here]]. 
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's write some code now...
+#+begin_src
+from microbit import *
+compass.calibrate()
+
+while True:
+    myHeading = compass.heading()
+    display.scroll(str(myHeading))
+#+end_src
+- After you complete the calibration sequence (tilt and roll the Micro:bit around in a circle), you'll get readings showing which way is North.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Using variables and =If= statements, we can make something a little more like a compass. 
+- I'd like to make the Micro:bit show a letter to indicate direction as I rotate the Micro:bit round. It won't be super-accurate, but it'll give an indication for the user.
+  - From 46 to 135 degrees, we'll show *E*.
+  - From 136 to 225 degrees, we'll show *S*.
+  - From 226 to 315 degrees, we'll show *W*.
+  - Finally, let's say that for a bearing of less than 46 or greater than 316 degrees, the Micro:bit should say *N*.
+- Our pseudocode will need to be something like this:              
+#+begin_src
+CALIBRATE COMPASS
+
+WHILE True
+    myHeading = READ_COMPASS_HEADING
+    
+    IF myHeading < 46 or myHeading > 316
+        PRINT "N"
+    ELSE IF myHeading < 136
+        PRINT "E"
+    ELSE IF myHeading < 226
+        PRINT "S"
+    ELSE
+        PRINT "W"
+    END IF
+END WHILE
+#+end_src
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Let's write the program...
+#+begin_src python
+from microbit import *
+compass.calibrate()
+
+while True:
+    myHeading = compass.heading()
+    
+    if myHeading < 46 or myHeading > 316:
+        display.show("N")
+    elif myHeading < 136:
+        display.show("E")
+    elif myHeading < 226:
+        display.show("S")
+    else:
+        display.show("W")
+#+end_src
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Complete the tasks for this lesson. Upload your =index.html= file.
-- *Silver:* Add the image to the =rightbox=.
-- *Gold:* Add a link to the =leftbox=.
-- *Platinum:* Complete all the tasks for this lesson.
+- *Silver:* Write a program to show a smiley face when the Micro:bit is pointing North, and a different image when pointing South. 
+- *Gold:* Also make the code show "A" and "B" when the corresponding buttons on the Micro:bit are pushed.
+- *Platinum:* Make the Micro:bit also respond to being turned face down, by showing an image.

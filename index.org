@@ -32,15 +32,15 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[file:pages/5_Lesson.html][Week 5 - Images]]
+* [[file:pages/5_Lesson.html][Week 5 - Making a point]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[file:pages/6_Lesson.html][Week 6 - Padding and Margins]]
+* [[file:pages/6_Lesson.html][Week 6 - Loopy randomness]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[file:pages/7_Lesson.html][Week 7 - Publishing online]]
+* [[file:pages/7_Lesson.html][Week 7 - Coding Challenge]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:

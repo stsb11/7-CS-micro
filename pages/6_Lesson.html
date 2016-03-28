@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Web Design</title>
+<title>Loopy randomness</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -59,10 +59,10 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Web Design</h1>
+<h1 class="title">Loopy randomness</h1>
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+      <a href="https://github.com/stsb11/7-CS-micro">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -76,209 +76,131 @@ for the JavaScript code in this tag.
     </ul>
   </div>
 <div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1">Next steps</h2>
+<h2 id="sec-1">Round in circles</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 <div id="outline-container-sec-1-1" class="outline-3 learn">
 <h3 id="sec-1-1">Learn It</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li>After you have done everything so far, you should see something similar to the following image when you open your index.html in a browser:
+<li>As well as <code>If</code> and variables, loops are essential for coding.
+</li>
+<li>You've used them throughout this topic already. Every time you write <code>While True:</code>, you've starting an infinite loop; one which never ends.
+</li>
+<li>Loops don't always need to last forever though. 
 </li>
 </ul>
-<p>
-<img src="./img/page-8.png" alt="page-8.png" />
-There are several things we can do to improve this page:
-</p>
-<ul class="org-ul">
-<li>Leave some space between the boxes
-</li>
-<li>Leave some space between the text and image from the border of the two boxes
-</li>
-<li>Add an image to fill the blank space in the topbox
-</li>
-<li>Make the heading "My Dog Jack" bigger
-</li>
-<li>Change the page's background colour from white to something more interesting
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="./img/page-finish.png" alt="page-finish.png" />
-</p>
 </div>
 </div>
-</div>
-<div id="outline-container-sec-1-2" class="outline-3 code">
-<h3 id="sec-1-2">Code It</h3>
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li>Space between boxes - add space between the topbox and the container.
+<li>There are two types of loop you can use: <code>WHILE</code> and <code>FOR</code>. 
 </li>
-</ul>
-<p>
-Let's examine the box model below: A box has top, buttom, left or right margin. By default all the four margins are zero.
-</p>
-<ul class="org-ul">
-<li>The model shows that the top margin is what we need to achieve the space between the topbox and the container which contains the left and right box inside it.
+<li>We'll just look at <code>WHILE</code> today; you'll bump into <code>FOR</code> loops some other time. 
 </li>
-</ul>
-
-<div class="org-src-container">
-
-<pre class="src src-html">margin-top: 10px;
-</pre>
-</div>
-
-<ul class="org-ul">
-<li>Can you work out, independently, where to put the line <code>margin-top: 10px;</code>?
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-sec-1-3" class="outline-3 code">
-<h3 id="sec-1-3">Code It</h3>
-<div class="outline-text-3" id="text-1-3">
-<ul class="org-ul">
-<li>Lets add some space between the left and the right boxes.
-</li>
-<li>If we add a margin using the right box, we will use its left margin; if we add a margin using the left box, we use its right margin.
-</li>
-<li><i>Important note:</i> if we add a margin to a box, it will move to make room for the added margin. 
-</li>
-<li>For example: if we add 10px of margin-left to the right box, it will move 10px to the right. This may result in the right box moving outside the big container and mess up our layout! 
-</li>
-<li>To solve this problem, we need to decrease the width of the right box by 10px so that it will remain inside the container.
-</li>
-</ul>
-
-
-<ul class="org-ul">
-<li>Before adding the margin:
+<li>We could write a count up app&#x2026;
 </li>
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-html">#rightbox {
-width: 640px;
-height: 600px;
-background-color: grey;
-float: right;
-}
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
+
+<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
+    <span style="color: #268bd2;">currentNumber</span> = 0
+
+    <span style="color: #859900; font-weight: bold;">while</span> currentNumber &lt; 5:
+        <span style="color: #268bd2;">currentNumber</span> +=1
+        display.scroll(<span style="color: #657b83; font-weight: bold;">str</span>(currentNumber))
 </pre>
 </div>
-
-
 <ul class="org-ul">
-<li>After adding the margin:
+<li>In this program, the <code>currentNumber</code> variable is increased by 1, then the current number is scrolled across the screen.
 </li>
-</ul>
-
-<div class="org-src-container">
-
-<pre class="src src-html">#rightbox {
-width: 630px;
-height: 600px;
-background-color: grey;
-float: right;
-margin-left; 10px;
-}
-</pre>
-</div>
-
-<ul class="org-ul">
-<li>Can you work out what changes made and why? If your image is out of place, can you fix it independently?
+<li>Each time the two instructions are executed, the while condition is checked to see if it is still true. As soon as <code>currentNumber</code> isn't less than 5, <code>currentNumber</code> is reset back to 0, the <code>While True</code> loop restarts.
 </li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-4" class="outline-3 code">
-<h3 id="sec-1-4">Code It</h3>
-<div class="outline-text-3" id="text-1-4">
-<ul class="org-ul">
-<li>Let's add space between the content (text and image) and the box border.
-</li>
-<li>We'll start by taking a look at what we have so far&#x2026;
+<li>The animation below shows the flow of the program, and the value of the variable as the program runs.
 </li>
 </ul>
 
 <div class="figure">
-<p><img src="./img/page-9.png" alt="page-9.png" />
+<p><img src="./img/6_loop.gif" alt="6_loop.gif" />
 </p>
 </div>
-<ul class="org-ul">
-<li>The hyperlinks inside the leftbox are too close to the borders of the box. We need to add some space between the box border and the hyperlinks.
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="./img/box-model.gif" alt="box-model.gif" />
-</p>
 </div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2">Lucky Dip</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Randomness</h3>
+<div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
-<li>The model (above) shows that the padding is what we need to achieve the space between the box border and the content. Just as margin, padding also has four sides: left, right, top and buttom. After some experimenting, I found the following works best for me: 
+<li>Computers struggle with generating genuinely random numbers, but can produce numbers that look random. We call these 'pseudorandom'. 
+</li>
+<li>To get started, we first use <code>import random</code> to bring in some extra code to support random numbers. 
+</li>
+<li>Next, ask the Micro:bit to fire up its random number generator with the <code>random.seed()</code> command. 
+</li>
+<li>After that, we can use <code>random.randint(a, b)</code> whenever we want to get a random number between <code>a</code> to <code>b</code> (e.g. 1 to 10). When we have the ability to use random numbers, we can make some really nice games for your Micro:bit.
+</li>
+<li>You can read more on random numbers in the MicroPython documentation, <a href="http://microbit-micropython.readthedocs.org/en/latest/random.html#functions">here</a>.
+</li>
+<li>Try this: 
 </li>
 </ul>
-
 <div class="org-src-container">
 
-<pre class="src src-html">padding-top: 40px; 
-padding-left: 10px;
-padding-buttom: 20px;
-padding-right: 10px;
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
+<span style="color: #859900; font-weight: bold;">import</span> random
+
+random.seed()
+
+<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
+    <span style="color: #268bd2;">targetNumber</span> = random.randint(5, 10)
+
+    <span style="color: #859900; font-weight: bold;">while</span> targetNumber &gt; 1:
+        <span style="color: #268bd2;">targetNumber</span> -=1
+        display.scroll(<span style="color: #657b83; font-weight: bold;">str</span>(targetNumber))
 </pre>
 </div>
-
-<ul class="org-ul">
-<li>Can you work out, independently, where to put the above lines?
-</li>
-</ul>
 </div>
 </div>
-<div id="outline-container-sec-1-5" class="outline-3 code">
-<h3 id="sec-1-5">Badge It</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-2-2" class="outline-3 code">
+<h3 id="sec-2-2">Badge It</h3>
+<div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
-<li>Decide on a topic you would like to make webpages about it.
-</li>
-<li>Your topic could be pets, movies, games, your favourite football teams, music bands, etc.
-</li>
-<li>Design your webpage layout using Paint or Word shapes tool.
-</li>
-<li>Your design must be different from the tutorial one. Annotate each element on your design. For example, a picture of my dog, or general information about my dog. etc
-</li>
-<li>Build your webpages one at a time based on the layout you designed. You need at least two pages that are linked.
-</li>
-<li>Build the webpages using Notepad or SublimeText if available. If you are stuck, go to appropriate sections in the tutorials for instructions.
+<li><b>Silver:</b> Write a program to count up from 1 to 5, then back down to 1, up to 5 again and so on repeatedly. Your pseudocode will be:
 </li>
 </ul>
+<pre class="example">
+IMPORT MicroPython
 
+WHILE True
+    currentNumber = 0
 
+    WHILE currentNumber &gt; 5:
+        currentNumber += 1
+        PRINT currentNumber
+    END WHILE
+
+    WHILE currentNumber &lt; 1:
+        currentNumber -= 1
+        PRINT currentNumber
+    END WHILE
+END WHILE
+</pre>
 <ul class="org-ul">
-<li>Once finished, write an evaluation of your project:
+<li><b>Gold:</b> Write a two-player game. The program should wait a random time between 1 and 5 seconds, then show an image. Player 1 then has to push button A as quickly as they can while player 2 has to push button B as quickly as possible. Whichever player pushes the button first wins, and either an A or a B should be shown on the display. The game should reset after a few seconds. 
+</li>
+<li><b>Platinum:</b> Make the Micro:bit version of the popular game, <a href="https://en.wikipedia.org/wiki/Bop_It">Bop-It</a>. When the game starts, use the <code>display.show()</code> command to give the user an instruction (e.g. A, B, 0, 1, 2 for the buttons and 'S' for shake). If the player performs the action, a smiley face is shown, then another instruction is given. Once they get it wrong, they're shown a sad face. 
 <ul class="org-ul">
-<li>Is your design suitable for its purpose?
-</li>
-<li>Is your design suitable for its intended audience?
-</li>
-<li>Are all links correct?
-</li>
-<li>Are the choices of colour, fonts, images appropriate?
-</li>
-<li>Work independently and hand in your project at the end of term.
+<li><i>Tip:</i> This is pretty hard. Start by just getting the player to push button A. Once that works, add the ability to push B and build up your code slowly. You can download a teacher version to try at home for your Micro:bit <a href="./doc/bop.hex">here</a>. 
 </li>
 </ul>
-</li>
-</ul>
-
-
-<ul class="org-ul">
-<li><b>Silver:</b> Create two inter-linked web pages using HTML.
-</li>
-<li><b>Gold:</b> Use CSS to style the pages.
-</li>
-<li><b>Platinum:</b> Use CSS with padding and margins to create your pages.
 </li>
 </ul>
 </div>
@@ -286,7 +208,7 @@ padding-right: 10px;
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="validation"></p>
 </div>
 </body>
 </html>

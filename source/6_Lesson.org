@@ -5,13 +5,13 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Web Design
-#+AUTHOR: Xiaohui Ellis
+#+TITLE: Loopy randomness
+#+AUTHOR: Stephen Brown
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/7-CS-webDesign">Fork me on GitHub</a>
+      <a href="https://github.com/stsb11/7-CS-micro">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -89,7 +89,7 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* Next steps
+* Round in circles
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
@@ -97,103 +97,79 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- After you have done everything so far, you should see something similar to the following image when you open your index.html in a browser:
-[[./img/page-8.png]]
-There are several things we can do to improve this page:
-- Leave some space between the boxes
-- Leave some space between the text and image from the border of the two boxes
-- Add an image to fill the blank space in the topbox
-- Make the heading "My Dog Jack" bigger
-- Change the page's background colour from white to something more interesting
-[[./img/page-finish.png]]
-** Code It
+- As well as =If= and variables, loops are essential for coding.
+- You've used them throughout this topic already. Every time you write =While True:=, you've starting an infinite loop; one which never ends.
+- Loops don't always need to last forever though. 
+** Learn It
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: code
+:HTML_CONTAINER_CLASS: learn
 :END:
-- Space between boxes - add space between the topbox and the container.
-Let's examine the box model below: A box has top, buttom, left or right margin. By default all the four margins are zero.
-- The model shows that the top margin is what we need to achieve the space between the topbox and the container which contains the left and right box inside it.
- 
-#+begin_src html
-margin-top: 10px;
+- There are two types of loop you can use: =WHILE= and =FOR=. 
+- We'll just look at =WHILE= today; you'll bump into =FOR= loops some other time. 
+- We could write a count up app...
+#+begin_src python
+from microbit import *
+
+while True:
+    currentNumber = 0
+
+    while currentNumber < 5:
+        currentNumber +=1
+        display.scroll(str(currentNumber))
 #+end_src
-
-- Can you work out, independently, where to put the line =margin-top: 10px;=?
-
-** Code It
+- In this program, the =currentNumber= variable is increased by 1, then the current number is scrolled across the screen.
+- Each time the two instructions are executed, the while condition is checked to see if it is still true. As soon as =currentNumber= isn't less than 5, =currentNumber= is reset back to 0, the =While True= loop restarts.
+- The animation below shows the flow of the program, and the value of the variable as the program runs.
+[[./img/6_loop.gif]]
+* Lucky Dip
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: code
+:HTML_CONTAINER_CLASS: activity
 :END:
-- Lets add some space between the left and the right boxes.
-- If we add a margin using the right box, we will use its left margin; if we add a margin using the left box, we use its right margin.
-- /Important note:/ if we add a margin to a box, it will move to make room for the added margin. 
-- For example: if we add 10px of margin-left to the right box, it will move 10px to the right. This may result in the right box moving outside the big container and mess up our layout! 
-- To solve this problem, we need to decrease the width of the right box by 10px so that it will remain inside the container.
-
-
-- Before adding the margin:
-#+begin_src html
-#rightbox {
-width: 640px;
-height: 600px;
-background-color: grey;
-float: right;
-} 
-#+end_src
-
-
-- After adding the margin:
-
-#+begin_src html
-#rightbox {
-width: 630px;
-height: 600px;
-background-color: grey;
-float: right;
-margin-left; 10px;
-}
-#+end_src
-
-- Can you work out what changes made and why? If your image is out of place, can you fix it independently?
-** Code It
+** Randomness
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: code
+:HTML_CONTAINER_CLASS: learn
 :END:
-- Let's add space between the content (text and image) and the box border.
-- We'll start by taking a look at what we have so far...
-[[./img/page-9.png]]
-- The hyperlinks inside the leftbox are too close to the borders of the box. We need to add some space between the box border and the hyperlinks.
-[[./img/box-model.gif]]
-- The model (above) shows that the padding is what we need to achieve the space between the box border and the content. Just as margin, padding also has four sides: left, right, top and buttom. After some experimenting, I found the following works best for me: 
+- Computers struggle with generating genuinely random numbers, but can produce numbers that look random. We call these 'pseudorandom'. 
+- To get started, we first use =import random= to bring in some extra code to support random numbers. 
+- Next, ask the Micro:bit to fire up its random number generator with the =random.seed()= command. 
+- After that, we can use =random.randint(a, b)= whenever we want to get a random number between =a= to =b= (e.g. 1 to 10). When we have the ability to use random numbers, we can make some really nice games for your Micro:bit.
+- You can read more on random numbers in the MicroPython documentation, [[http://microbit-micropython.readthedocs.org/en/latest/random.html#functions][here]].
+- Try this: 
+#+begin_src python
+from microbit import *
+import random
 
-#+begin_src html
-padding-top: 40px; 
-padding-left: 10px;
-padding-buttom: 20px;
-padding-right: 10px;
+random.seed()
+
+while True:
+    targetNumber = random.randint(5, 10)
+
+    while targetNumber > 1:
+        targetNumber -=1
+        display.scroll(str(targetNumber))
 #+end_src
-
-- Can you work out, independently, where to put the above lines?
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- Decide on a topic you would like to make webpages about it.
-- Your topic could be pets, movies, games, your favourite football teams, music bands, etc.
-- Design your webpage layout using Paint or Word shapes tool.
-- Your design must be different from the tutorial one. Annotate each element on your design. For example, a picture of my dog, or general information about my dog. etc
-- Build your webpages one at a time based on the layout you designed. You need at least two pages that are linked.
-- Build the webpages using Notepad or SublimeText if available. If you are stuck, go to appropriate sections in the tutorials for instructions.
+- *Silver:* Write a program to count up from 1 to 5, then back down to 1, up to 5 again and so on repeatedly. Your pseudocode will be:
+#+begin_src
+IMPORT MicroPython
 
+WHILE True
+    currentNumber = 0
 
-- Once finished, write an evaluation of your project:
-  - Is your design suitable for its purpose?
-  - Is your design suitable for its intended audience?
-  - Are all links correct?
-  - Are the choices of colour, fonts, images appropriate?
-  - Work independently and hand in your project at the end of term.
+    WHILE currentNumber > 5:
+        currentNumber += 1
+        PRINT currentNumber
+    END WHILE
 
-
-- *Silver:* Create two inter-linked web pages using HTML.
-- *Gold:* Use CSS to style the pages.
-- *Platinum:* Use CSS with padding and margins to create your pages.
+    WHILE currentNumber < 1:
+        currentNumber -= 1
+        PRINT currentNumber
+    END WHILE
+END WHILE
+#+end_src
+- *Gold:* Write a two-player game. The program should wait a random time between 1 and 5 seconds, then show an image. Player 1 then has to push button A as quickly as they can while player 2 has to push button B as quickly as possible. Whichever player pushes the button first wins, and either an A or a B should be shown on the display. The game should reset after a few seconds. 
+- *Platinum:* Make the Micro:bit version of the popular game, [[https://en.wikipedia.org/wiki/Bop_It][Bop-It]]. When the game starts, use the =display.show()= command to give the user an instruction (e.g. A, B, 0, 1, 2 for the buttons and 'S' for shake). If the player performs the action, a smiley face is shown, then another instruction is given. Once they get it wrong, they're shown a sad face. 
+  - /Tip:/ This is pretty hard. Start by just getting the player to push button A. Once that works, add the ability to push B and build up your code slowly. You can download a teacher version to try at home for your Micro:bit [[./doc/bop.hex][here]]. 
