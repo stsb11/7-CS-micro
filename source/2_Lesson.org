@@ -169,7 +169,16 @@ while True:
         x=0
 #+end_src
 - Let's consider our code...
-- The =x=0= line is telling 
+- The =x=0= line is setting up a variable called X and assigning it the value 0.
+- The =howBright=9= line is to hold how bright we want the LEDs to come on when they light up. 
+- =while True= tells the computer that we're starting a loop, which will continue forever. We call this an /infinite loop/. 
+- *NOTE:* The commands that we want to repeat are 'tabbed' in on the page so that they stick in a few spaces more than the lines before it. This is important; one of the most common causes of coding errors are made by not /indenting/ code when needed. 
+- The =display.set_pixel(x, 0, howBright)= line asks the Micro:bit to turn on the LED located at position x (worth 0 the first time we run through the program), in column 0 with a brightness of howBright (worth 9). 
+- Next, the =x+=1= line tells the computer to add 1 to the value of x. If it was 1, it'll become 2, if it's 2, it'll become 3 and so on.
+- =sleep(250)= tells the Micro:bit to wait a quarter of a second before it performs the next command.
+- The =if= statement tells the Micro:bit to see if =x= is worth 5. If it is, the next two instructions are carried out (notice how these instructions are also indented?)
+- IF x is 5, then the display is cleared (all LEDs turned off) and =x= is reset back to 0.
+- This is the last line of code indented in the =while= loop. Once it has been carried out, the next line of code will be the =while True:= line again as the loop restarts. 
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge

@@ -210,7 +210,25 @@ for the JavaScript code in this tag.
 <ul class="org-ul">
 <li>Let's consider our code&#x2026;
 </li>
-<li>The <code>x=0</code> line is telling 
+<li>The <code>x=0</code> line is setting up a variable called X and assigning it the value 0.
+</li>
+<li>The <code>howBright=9</code> line is to hold how bright we want the LEDs to come on when they light up. 
+</li>
+<li><code>while True</code> tells the computer that we're starting a loop, which will continue forever. We call this an <i>infinite loop</i>. 
+</li>
+<li><b>NOTE:</b> The commands that we want to repeat are 'tabbed' in on the page so that they stick in a few spaces more than the lines before it. This is important; one of the most common causes of coding errors are made by not <i>indenting</i> code when needed. 
+</li>
+<li>The <code>display.set_pixel(x, 0, howBright)</code> line asks the Micro:bit to turn on the LED located at position x (worth 0 the first time we run through the program), in column 0 with a brightness of howBright (worth 9). 
+</li>
+<li>Next, the <code>x+=1</code> line tells the computer to add 1 to the value of x. If it was 1, it'll become 2, if it's 2, it'll become 3 and so on.
+</li>
+<li><code>sleep(250)</code> tells the Micro:bit to wait a quarter of a second before it performs the next command.
+</li>
+<li>The <code>if</code> statement tells the Micro:bit to see if <code>x</code> is worth 5. If it is, the next two instructions are carried out (notice how these instructions are also indented?)
+</li>
+<li>IF x is 5, then the display is cleared (all LEDs turned off) and <code>x</code> is reset back to 0.
+</li>
+<li>This is the last line of code indented in the <code>while</code> loop. Once it has been carried out, the next line of code will be the <code>while True:</code> line again as the loop restarts. 
 </li>
 </ul>
 </div>
