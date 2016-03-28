@@ -1,3 +1,10 @@
+# Bop-it style game.
+
+# User must push either A, B or GPIO 0, 1 or 2.
+# The amount of time allowed to respond to the instructions  slowly decreases.
+# Score shown at the end. 
+
+# The accelerometer code is a bit flaky, but can be re-enabled by changing the randint() line to pick from 1-6 rather than 1-5.  
 from microbit import *
 import random
 

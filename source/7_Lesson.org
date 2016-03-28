@@ -105,7 +105,25 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- *Challenge 1:* Write an inefficient program to turn on the LEDs, one row at a time. Make it use as many lines as possible.
-- *Challenge 2:* Write the program 1 in as few lines of code as possible.
-- *Challenge 3:* Write a dice program. When one of the buttons is pushed, a random number between 1 and 6 is shown on the screen.
-- *Challenge 4:* Muslims always face East 
+- *Challenge 1:* Write an inefficient program to turn on all the LEDs, one column at a time. When they're all on, clear the display and restart. Make the program use as many lines as possible (as long as they all do something useful).
+- *Challenge 2:* Write the program 1 in as few lines of code as you can, using loops.
+- *Challenge 3:* Make a screensaver effect, where all the LEDs slowly fade in, then fade out again over and over. 
+- *Challenge 4:* Write a dice program. When one of the buttons is pushed, a random number between 1 and 6 is shown on the screen.
+- *Challenge 5:* Write a Harry Potter-style sorting hat app. When one of the buttons is pushed, a [[http://harrypotter.wikia.com/wiki/Hogwarts_Houses][house]] is chosen. Will you be in Slitherin?
+- *Challenge 6:* Make a compass app that uses one of the outer-most LEDs to indicate which way North is. 
+- *Challenge 7:* Make a fortune teller app. When the user pushes a button or shakes the Micro:bit, a random piece of advice is given. E.g. 'Choose Computer Science at GCSE', 'Eat more vegetables', etc.
+- *Challenge 8:* Design and create a balance game. The player must keep the Micro:bit completely flat while walking around with it on their head. If it tips too far, a sad face is shown, and the gme is over. 
+- *Challenge 9:* Make a variable brightness torch. Either pushing the buttons or tilting the Micro:bit forward and back should make make the LEDs come on brighter or dimmer. 
+- *Challenge 10:* Pass the parcel game. Players pass the bit from one to another. Every 5-20 seconds (at random), the Micro:bit should change image and that player is out. The game then continues until there is only one player left.
+- *Challenge 11:* Egg timer. Users start by choosing a time (in minutes) using the A button. The timer is started by pressing the B button. The amount of time left is shown on on the display. When the time runs out, the display changes to an image of happy face.
+- *Challenge 12:* Snake game. The user tilts the Micro:bit forward, backward, left and right. As they do so, LEDs come on one by one to draw out a pattern.
+[[http://www.diskus.pk/uploads/default/51/d717c2fa174c46f4.jpg]]
+- This used to be a popular game on early Nokia 'phones.
+- *Challenge 13:* Multiplication table generator. The user starts by using the GPIO pads 0 and 2 (it may be helpful to look again at the [[./4_Lesson.html][week 4 notes]]) to pick a times table to look at. The player can then use buttons A and B to navigate forward and backward through the times table they want to see. Reset the Micro:bit to choose a new table.
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Silver:* Complete two code challenges from the set above, and upload your code for both to BourneToLearn.com
+- *Gold:* Complete four coding challenges.
+- *Platinum:* Complete six coding challenges. 

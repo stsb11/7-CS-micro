@@ -1,3 +1,7 @@
+# Reflex testing game.
+# After a random interval, the display will change
+# Which player will hit A or B first?
+
 from microbit import *
 import random
 
