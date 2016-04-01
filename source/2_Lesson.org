@@ -179,6 +179,10 @@ while True:
 - The =if= statement tells the Micro:bit to see if =x= is worth 5. If it is, the next two instructions are carried out (notice how these instructions are also indented?)
 - IF x is 5, then the display is cleared (all LEDs turned off) and =x= is reset back to 0.
 - This is the last line of code indented in the =while= loop. Once it has been carried out, the next line of code will be the =while True:= line again as the loop restarts. 
+- If you need a little extra help, the video tutorial walks you through everything in this lesson...
+#+BEGIN_HTML
+<iframe width="840" height="630" src="https://www.youtube.com/embed/uhShXOhzeSM" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
