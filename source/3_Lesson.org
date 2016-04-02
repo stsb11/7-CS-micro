@@ -5,7 +5,7 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Conditional Buttons
+#+TITLE: Curious Conditionals
 #+AUTHOR: Stephen Brown
 
 #+BEGIN_HTML
@@ -129,7 +129,7 @@ PRINT "Thank you for using the food guide."
 - A user who who chooses 1, -5 or 0 would be advised to wait until later, and is then thanked. This is because none of the other statements in the =If= block were true. 
 - If you're still unsure, this video tutorial gives another example, using Scratch:
 #+BEGIN_HTML
-<iframe width="420" height="315" src="https://www.youtube.com/embed/aqeDBeA1dqg" frameborder="0" allowfullscreen></iframe>
+<iframe width="540" height="320" src="https://www.youtube.com/embed/aqeDBeA1dqg" frameborder="0" allowfullscreen></iframe>
 #+END_HTML
 ** Learn It
 :PROPERTIES:
@@ -203,7 +203,10 @@ while True:
 - With this code working, could we improve it?
 - I only want the program to show the numbers 0-9, but at the moment it'll give me negative numbers, and will count beyond 9.
 - Programmers can add =If= statements inside other =if= statements (we call this nesting) to produce even more powerful programs. We just need to remember to tab in the code correctly to tell the computer which commands are in our =If= block and which aren't.
- 
+- If you're finding the concepts tricky, the video tutorial below will walk you through what you need to know:
+#+BEGIN_HTML
+<iframe width="540" height="320" src="https://www.youtube.com/embed/_tEnUclQdFA" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge

@@ -5,7 +5,7 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Coding Challenges
+#+TITLE: Micro:Coda
 #+AUTHOR: Stephen Brown
 
 #+BEGIN_HTML
@@ -89,7 +89,7 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* Micro Challenge
+* Challenges
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:

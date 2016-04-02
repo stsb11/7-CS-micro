@@ -5,7 +5,7 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Web Design
+#+TITLE: Various Variables
 #+AUTHOR: Stephen Brown
 
 #+BEGIN_HTML
