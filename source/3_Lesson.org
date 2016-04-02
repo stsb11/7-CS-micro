@@ -127,6 +127,10 @@ PRINT "Thank you for using the food guide."
 - If they'd entered 9, a sandwich is recommended, then they're thanked.
 - Entering 5 would advise the user to eat an apple, then they're thanked. /Why is that?/
 - A user who who chooses 1, -5 or 0 would be advised to wait until later, and is then thanked. This is because none of the other statements in the =If= block were true. 
+- If you're still unsure, this video tutorial gives another example, using Scratch:
+#+BEGIN_HTML
+<iframe width="420" height="315" src="https://www.youtube.com/embed/aqeDBeA1dqg" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
 ** Learn It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
@@ -198,7 +202,8 @@ while True:
 
 - With this code working, could we improve it?
 - I only want the program to show the numbers 0-9, but at the moment it'll give me negative numbers, and will count beyond 9.
-- Programmers can add =If= statements inside other =if= statements (we call this nesting) to produce even more powerful programs. We just need to remember to tab in the code correctly to tell the computer which commands are in our =If= block and which aren't. 
+- Programmers can add =If= statements inside other =if= statements (we call this nesting) to produce even more powerful programs. We just need to remember to tab in the code correctly to tell the computer which commands are in our =If= block and which aren't.
+ 
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
