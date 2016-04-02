@@ -200,6 +200,10 @@ while True:
     else:
         display.show("W")
 #+end_src
+- If you're struggling to understand where the numbers above come from, the video tutorial below goes through it in more detail:
+#+BEGIN_HTML
+<iframe width="580" height="320" src="https://www.youtube.com/embed/kOv5PKBsGtg" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
