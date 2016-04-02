@@ -117,6 +117,10 @@ while True:
 #+end_src
 
 - To test the program, hold the =GND= pin with one hand, then touch the =0=, =1= and =2= pins with a fingertip on the other hand. Cool, eh?
+- If you're unsure of anything covered so far, this video tutorial will take you through it:
+#+BEGIN_HTML
+<iframe width="580" height="320" src="https://www.youtube.com/embed/OxEm4uWx6gw" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
 * Accelerometer
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
@@ -177,6 +181,10 @@ WHILE True:
     TURN ON THE LED AT POSITION X, Y.
 END WHILE
 #+end_src
+- If you're struggling with the concepts here, the video tutorial may be useful:
+#+BEGIN_HTML
+<iframe width="580" height="320" src="https://www.youtube.com/embed/1ZDdedIGJso" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge

@@ -149,7 +149,8 @@ while True:
     myHeading = compass.heading()
     display.scroll(str(myHeading))
 #+end_src
-- After you complete the calibration sequence (tilt and roll the Micro:bit around in a circle), you'll get readings showing which way is North.
+- After you complete the calibration sequence (tilt and roll the Micro:bit around in a circle), you'll get readings showing which way is North. 
+- *NOTE:* If you're using this inside, nearby metal objects and equipment using magnets (e.g. speakers, motors) can affect the accurate of the compass quite significantly). 
 ** Learn It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
@@ -204,5 +205,5 @@ while True:
 :HTML_CONTAINER_CLASS: badge
 :END:
 - *Silver:* Write a program to show a smiley face when the Micro:bit is pointing North, and a different image when pointing South. 
-- *Gold:* Also make the code show "A" and "B" when the corresponding buttons on the Micro:bit are pushed.
-- *Platinum:* Make the Micro:bit also respond to being turned face down, by showing an image.
+- *Gold:* Add an emergency feature to your digital compass by making the display "SOS" across the display when the A button is pushed, and if B is pushed, flashing all the LEDs to spell out "SOS" in [[https://en.wikipedia.org/wiki/Morse_code][Morse code]].
+- *Platinum:* Use the LED display to make the Micro:bit always point out north as is is rotated. I.e. If the Micro:bit is pointing north, the LED located at (2, 0) should be on. If it's pointing west the LED at (4, 2) should be on, pointing north-west should turn on (4, 0) and so on.
