@@ -113,7 +113,7 @@
 - Scroll down slightly, and click the link under the "Python" heading that says, "New project".
 - Your screen should look something like this:
 [[./img/python_ide.png]]
-- Change the line 7 (they're numbered along the left-hand edge) to gree you by name rather than writing "Hello World".
+- Change the line 7 (they're numbered along the left-hand edge) to greet you by name rather than writing "Hello World".
 - We can now put this program to our Micro:bit and see it work in the real World. Follow these instructions carefully:
   1. Gently plug the small end of the USB cable you've been given by your teacher into the socket on the Micro:bit. *NOTE:* The cable must go in the right way up; it does not need to be forced, otherwise it'll break.
   2. Plug the larger end of the USB cable into your PC. Again, this will only fit one way round. 
