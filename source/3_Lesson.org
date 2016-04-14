@@ -16,13 +16,13 @@
   </div>
 <div id="stickyribbon">
     <ul>
-      <li><a href="1_Lesson.html">Week1</a></li>
-      <li><a href="2_Lesson.html">Week2</a></li>
-      <li><a href="3_Lesson.html">Week3</a></li>
-      <li><a href="4_Lesson.html">Week4</a></li>
-      <li><a href="5_Lesson.html">Week5</a></li>
-      <li><a href="6_Lesson.html">Week6</a></li>
-      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="1_Lesson.html">Lesson1</a></li>
+      <li><a href="2_Lesson.html">Lesson2</a></li>
+      <li><a href="3_Lesson.html">Lesson3</a></li>
+      <li><a href="4_Lesson.html">Lesson4</a></li>
+      <li><a href="5_Lesson.html">Lesson5</a></li>
+      <li><a href="6_Lesson.html">Lesson6</a></li>
+      <li><a href="7_Lesson.html">Lesson7</a></li>
     </ul>
   </div>
 #+END_HTML
@@ -99,7 +99,7 @@
 :HTML_CONTAINER_CLASS: learn
 :END:
 - We've used the [[https://www.microbit.co.uk/create-code][browser-based IDE]] for our Micro:bit, but it's a little nicer working in a proper application when we need to find problems with our code. We're going to use a program called /Mu/ from this point forward. You can use this method, or the web browser version from last lesson with your Micro:bit at home.
-- *NOTE:* You can download /Mu/ for use at home [[https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/windows/mu-2016-03-21_08_49_17.exe][here]] (Windows) or [[https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/osx/mu-2016-03-14_21_09_19.zip][here]] (MacOS). 
+- *NOTE:* You can download /Mu/ for use at home [[http://codewith.mu/#download][here]] (All operating systems).
 - Start by loading /Mu/ from the Open drive, in this folder:
 - =G:\Computing 2015-2016\Y7\BBC MicroBit= 
 ** Learn It

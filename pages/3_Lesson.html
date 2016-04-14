@@ -67,13 +67,13 @@ for the JavaScript code in this tag.
   </div>
 <div id="stickyribbon">
     <ul>
-      <li><a href="1_Lesson.html">Week1</a></li>
-      <li><a href="2_Lesson.html">Week2</a></li>
-      <li><a href="3_Lesson.html">Week3</a></li>
-      <li><a href="4_Lesson.html">Week4</a></li>
-      <li><a href="5_Lesson.html">Week5</a></li>
-      <li><a href="6_Lesson.html">Week6</a></li>
-      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="1_Lesson.html">Lesson1</a></li>
+      <li><a href="2_Lesson.html">Lesson2</a></li>
+      <li><a href="3_Lesson.html">Lesson3</a></li>
+      <li><a href="4_Lesson.html">Lesson4</a></li>
+      <li><a href="5_Lesson.html">Lesson5</a></li>
+      <li><a href="6_Lesson.html">Lesson6</a></li>
+      <li><a href="7_Lesson.html">Lesson7</a></li>
     </ul>
   </div>
 <div id="outline-container-sec-1" class="outline-2 activity">
@@ -86,7 +86,7 @@ for the JavaScript code in this tag.
 <ul class="org-ul">
 <li>We've used the <a href="https://www.microbit.co.uk/create-code">browser-based IDE</a> for our Micro:bit, but it's a little nicer working in a proper application when we need to find problems with our code. We're going to use a program called <i>Mu</i> from this point forward. You can use this method, or the web browser version from last lesson with your Micro:bit at home.
 </li>
-<li><b>NOTE:</b> You can download <i>Mu</i> for use at home <a href="https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/windows/mu-2016-03-21_08_49_17.exe">here</a> (Windows) or <a href="https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/osx/mu-2016-03-14_21_09_19.zip">here</a> (MacOS). 
+<li><b>NOTE:</b> You can download <i>Mu</i> for use at home <a href="http://codewith.mu/#download">here</a> (All operating systems).
 </li>
 <li>Start by loading <i>Mu</i> from the Open drive, in this folder:
 </li>
@@ -162,13 +162,13 @@ END WHILE
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
+<pre class="src src-python">from microbit import *
 
-<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
-    <span style="color: #859900; font-weight: bold;">if</span> button_a.is_pressed():
-        display.show(Image.CHESSBOARD)
-    <span style="color: #859900; font-weight: bold;">elif</span> button_b.is_pressed():
-        display.clear()
+while True:
+    if button_a.is_pressed():
+	display.show(Image.CHESSBOARD)
+    elif button_b.is_pressed():
+	display.clear()
 </pre>
 </div>
 <ul class="org-ul">
@@ -216,16 +216,16 @@ WHILE END
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
-<span style="color: #268bd2;">currentNumber</span> = 0
+<pre class="src src-python">from microbit import *
+currentNumber = 0
 
-<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
-    <span style="color: #859900; font-weight: bold;">if</span> button_a.is_pressed():
-        <span style="color: #268bd2;">currentNumber</span> -= 1
-        display.scroll(<span style="color: #657b83; font-weight: bold;">str</span>(currentNumber))
-    <span style="color: #859900; font-weight: bold;">elif</span> button_b.is_pressed():
-        <span style="color: #268bd2;">currentNumber</span> += 1
-        display.scroll(<span style="color: #657b83; font-weight: bold;">str</span>(currentNumber))
+while True:
+    if button_a.is_pressed():
+	currentNumber -= 1
+	display.scroll(str(currentNumber))
+    elif button_b.is_pressed():
+	currentNumber += 1
+	display.scroll(str(currentNumber))
 </pre>
 </div>
 <ul class="org-ul">
@@ -257,7 +257,7 @@ WHILE END
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">if</span> currentNumber &gt;= 1:
+<pre class="src src-python">if currentNumber &gt;= 1:
 </pre>
 </div>
 <ul class="org-ul">
