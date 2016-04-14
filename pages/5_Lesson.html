@@ -67,13 +67,13 @@ for the JavaScript code in this tag.
   </div>
 <div id="stickyribbon">
     <ul>
-      <li><a href="1_Lesson.html">Week1</a></li>
-      <li><a href="2_Lesson.html">Week2</a></li>
-      <li><a href="3_Lesson.html">Week3</a></li>
-      <li><a href="4_Lesson.html">Week4</a></li>
-      <li><a href="5_Lesson.html">Week5</a></li>
-      <li><a href="6_Lesson.html">Week6</a></li>
-      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="1_Lesson.html">Lesson1</a></li>
+      <li><a href="2_Lesson.html">Lesson2</a></li>
+      <li><a href="3_Lesson.html">Lesson3</a></li>
+      <li><a href="4_Lesson.html">Lesson4</a></li>
+      <li><a href="5_Lesson.html">Lesson5</a></li>
+      <li><a href="6_Lesson.html">Lesson6</a></li>
+      <li><a href="7_Lesson.html">Lesson7</a></li>
     </ul>
   </div>
 <div id="outline-container-sec-1" class="outline-2 activity">
@@ -95,15 +95,15 @@ for the JavaScript code in this tag.
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
+<pre class="src src-python">from microbit import *
 
-<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
-    <span style="color: #268bd2;">gesture</span> = accelerometer.current_gesture()
-    <span style="color: #859900; font-weight: bold;">if</span> gesture == <span style="color: #2aa198;">"shake"</span>:
-        display.show(Image.HAPPY)
-        sleep(2000)
-    <span style="color: #859900; font-weight: bold;">else</span>:
-        display.show(Image.ASLEEP)
+while True:
+    gesture = accelerometer.current_gesture()
+    if gesture == "shake":
+	display.show(Image.HAPPY)
+	sleep(2000)
+    else:
+	display.show(Image.ASLEEP)
 </pre>
 </div>
 </div>
@@ -216,20 +216,20 @@ END WHILE
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
+<pre class="src src-python">from microbit import *
 compass.calibrate()
 
-<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
-    <span style="color: #268bd2;">myHeading</span> = compass.heading()
+while True:
+    myHeading = compass.heading()
 
-    <span style="color: #859900; font-weight: bold;">if</span> myHeading &lt; 46 <span style="color: #859900; font-weight: bold;">or</span> myHeading &gt; 316:
-        display.show(<span style="color: #2aa198;">"N"</span>)
-    <span style="color: #859900; font-weight: bold;">elif</span> myHeading &lt; 136:
-        display.show(<span style="color: #2aa198;">"E"</span>)
-    <span style="color: #859900; font-weight: bold;">elif</span> myHeading &lt; 226:
-        display.show(<span style="color: #2aa198;">"S"</span>)
-    <span style="color: #859900; font-weight: bold;">else</span>:
-        display.show(<span style="color: #2aa198;">"W"</span>)
+    if myHeading &lt; 46 or myHeading &gt; 316:
+	display.show("N")
+    elif myHeading &lt; 136:
+	display.show("E")
+    elif myHeading &lt; 226:
+	display.show("S")
+    else:
+	display.show("W")
 </pre>
 </div>
 <ul class="org-ul">
