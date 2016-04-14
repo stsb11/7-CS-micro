@@ -17,7 +17,7 @@
 <div id="stickyribbon">
     <ul>
       <li><a href="1_Lesson.html">Lesson1</a></li>
-      <li><a href="2_Lesson.html">Lesson22</a></li>
+      <li><a href="2_Lesson.html">Lesson2</a></li>
       <li><a href="3_Lesson.html">Lesson3</a></li>
       <li><a href="4_Lesson.html">Lesson4</a></li>
       <li><a href="5_Lesson.html">Lesson5</a></li>
