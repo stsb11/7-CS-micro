@@ -106,14 +106,14 @@ for the JavaScript code in this tag.
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-python">from microbit import *
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
 
-while True:
-    currentNumber = 0
+<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
+    <span style="color: #268bd2;">currentNumber</span> = 0
 
-    while currentNumber &lt; 5:
-	currentNumber +=1
-	display.scroll(str(currentNumber))
+    <span style="color: #859900; font-weight: bold;">while</span> currentNumber &lt; 5:
+        <span style="color: #268bd2;">currentNumber</span> +=1
+        display.scroll(<span style="color: #657b83; font-weight: bold;">str</span>(currentNumber))
 </pre>
 </div>
 <ul class="org-ul">
@@ -140,7 +140,7 @@ while True:
 <h3 id="sec-2-1">Randomness</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
-<li>Computers struggle with generating genuinely random numbers, but can produce numbers that look random. We call these 'pseudorandom'numbers. 
+<li>Computers struggle with generating genuinely random numbers, but can produce numbers that look random. We call these 'pseudorandom'. 
 </li>
 <li>To get started, we first use <code>import random</code> to bring in some extra code to support random numbers. 
 </li>
@@ -155,17 +155,17 @@ while True:
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-python">from microbit import *
-import random
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> microbit <span style="color: #859900; font-weight: bold;">import</span> *
+<span style="color: #859900; font-weight: bold;">import</span> random
 
 random.seed()
 
-while True:
-    targetNumber = random.randint(5, 10)
+<span style="color: #859900; font-weight: bold;">while</span> <span style="color: #268bd2; font-weight: bold;">True</span>:
+    <span style="color: #268bd2;">targetNumber</span> = random.randint(5, 10)
 
-    while targetNumber &gt; 1:
-	targetNumber -=1
-	display.scroll(str(targetNumber))
+    <span style="color: #859900; font-weight: bold;">while</span> targetNumber &gt; 1:
+        <span style="color: #268bd2;">targetNumber</span> -=1
+        display.scroll(<span style="color: #657b83; font-weight: bold;">str</span>(targetNumber))
 </pre>
 </div>
 <ul class="org-ul">
@@ -188,12 +188,12 @@ IMPORT MicroPython
 WHILE True
     currentNumber = 0
 
-    WHILE currentNumber &gt; 5:
+    WHILE currentNumber &lt; 5:
         currentNumber += 1
         PRINT currentNumber
     END WHILE
 
-    WHILE currentNumber &lt; 1:
+    WHILE currentNumber &gt; 1:
         currentNumber -= 1
         PRINT currentNumber
     END WHILE
@@ -214,7 +214,7 @@ END WHILE
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="validation"></p>
 </div>
 </body>
 </html>
