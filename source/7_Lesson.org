@@ -110,7 +110,7 @@
 - *Challenge 2:* Write the solution to challenge 1 in as few lines of code as possible, using loops.
 - *Challenge 3:* Make a screensaver effect, where all the LEDs slowly fade in, then fade out again over and over. 
 - *Challenge 4:* Write a dice program. When one of the buttons is pushed, a random number between 1 and 6 is shown on the screen.
-- *Challenge 5:* Write a Harry Potter-style sorting hat app. When one of the buttons is pushed, a [[http://harrypotter.wikia.com/wiki/Hogwarts_Houses][house]] is chosen. Will you be in Slitherin?
+- *Challenge 5:* Write a Harry Potter-style sorting hat app. When one of the buttons is pushed, a [[http://harrypotter.wikia.com/wiki/Hogwarts_Houses][house]] is chosen. Will you be in Slytherin?
 - *Challenge 6:* Make a compass app that uses one of the outer-most LEDs to indicate which way North is. 
 - *Challenge 7:* Make a fortune teller app. When the user pushes a button or shakes the Micro:bit, a random piece of advice is given. e.g. 'Choose Computer Science at GCSE', 'Eat more vegetables', etc.
 - *Challenge 8:* Design and create a balance game. The player must keep the Micro:bit completely flat while walking around with it on their head. If it tips too far, a sad face is shown, and the game is over. 
